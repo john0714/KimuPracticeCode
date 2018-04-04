@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- dataSource 설정, spring-jdbc 모듈 사용, spring 에서 jdbc 를 통해 mysql 에 접속할 수 있게 함 -->
+    <bean id="kimuDBconnect" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/BookSystem"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="a108106a"></property>
+    </bean>	
+    
+    <bean id="LoginConnect" class="com.higasi.booksystem.Login">
+    </bean>	
+    
+    <bean id="ShowDataBase" class="com.higasi.booksystem.ConnectDB">
+    </bean>	
+</beans>
