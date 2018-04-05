@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <title>東新宿　本システム</title>
 </head>
+<% if(session.getAttribute("id")==null) { response.sendRedirect("index.jsp");%>
+<% } else { %>
 <body>
 	<form action="Logout.do">
 		<input type="submit" value="ログアウト"/>
@@ -43,4 +45,5 @@
 		</c:forEach>
 	</table>
 </body>
+<% } %>
 </html>

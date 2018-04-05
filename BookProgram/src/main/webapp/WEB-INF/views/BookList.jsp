@@ -19,22 +19,23 @@
 
 <title>東新宿　本システム</title>
 </head>
-<% if(session.getAttribute("id")==null) { %>
-	<body>
-	세션이 만료되었습니다.
-	</body>
-<% } else {%>
+<% if(session.getAttribute("id")==null) { response.sendRedirect("index.jsp");%>
+<% } else { %>
 <body>
+<div class="container">
 	<header>
 	<div class="ManagementButtons">
 	<form action="Logout.do">
 		<input type="submit" value="ログアウト"/>
 	</form>
 	<form action="AddBook.do">
-		<input type="submit" value="本追加"/>
+		<input type="submit" value="本新規登録"/>
 	</form>
 	<form action="ViewLog.do">
-		<input type="submit" value="記録を見る"/>
+		<input type="submit" value="レンタル履歴"/>
+	</form>
+	<form action="UserCreate.do">
+		<input type="submit" value = "ユーザー新規登録"/>
 	</form>
 	</div>
 	<div class="Search">
@@ -52,11 +53,11 @@
 	</header>
 	<table class="table">
 		<tr class="warning">
-				<td>Code<a href="#" onclick="sortTable(0)">↕</a></td>
+				<td>No.<a href="#" onclick="sortTable(0)">↕</a></td>
 				<td>名前<a href="#" onclick="sortTable(1)">↕</a></td>
 				<td>種類<a href="#" onclick="sortTable(2)">↕</a></td>
-				<td>登録時間<a href="#" onclick="sortTable(3)">↕</a></td>
-				<td>貸出しする人</td>
+				<td>登録日時<a href="#" onclick="sortTable(3)">↕</a></td>
+				<td>貸出者</td>
 				<td>作業<a href="#" onclick="sortTable(5)">↕</a></td>
 		</tr>
 		
@@ -99,16 +100,17 @@
 				<c:if test="${listValue.rentalCheck eq 0}">
 					<!-- textの値を送るため hidden typeを作ります -->
 					<td>
-						<input type="submit" onclick="" value="貸し出しする" />
+						<input type="submit" onclick="" value="貸出" />
 					</td>
 				</c:if>
 				<c:if test="${listValue.rentalCheck eq 1}">
-					<td><input type="submit" onclick="" value="返納する" /></td>
+					<td><input type="submit" onclick="" value="返却" /></td>
 				</c:if>
 			</tr>
 			</form>
 		</c:forEach>
 	</table>
+</div>
 </body>
 <% } %>
 <script>

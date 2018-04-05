@@ -10,31 +10,29 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
 
 <title>マーキュリーBookシステム</title>
+<%   
+//그냥JSP용 no-cache처리, 스프링에선 안먹힘
+/*
+response.setHeader("Cache-Control","no-store");   
+response.setHeader("Pragma","no-cache");   
+response.setDateHeader("Expires",0);   
+if (request.getProtocol().equals("HTTP/1.1")) 
+        response.setHeader("Cache-Control", "no-cache"); 
+*/
+%>
 </head>
-<% if(session.getAttribute("id")!=null) { %>
-<body onLoad="document.UserLogin.submit();">
-	<form action="Login.do" method="post" name="UserLogin">
-		<input type="hidden" name="idtext" id="idtext" value="<%=session.getAttribute("id") %>"/>
-		<input type="hidden" name="pwtext" value="<%=session.getAttribute("pw") %>" />
-	</form>
-</body>
-<% } else{ %>
 <body>
-		<div class="login">
-			<form action="Login.do" method="post">
+	<div class="login">
+		<form action="Login.do" method="post">
 			<p>ID</p>
 				<input type="text" name="idtext">
 			<p>パスワード</p>
 				<input type="password" name="pwtext"/>
 			<p></p>
-			<div class="somebutton">
-				<input type=submit style='font-size:16pt' value="ログイン"></input>
-			</form>
-			<form action="UserCreate.do">
-				<input type="submit" style='font-size:16pt' value = "使用者加入"/>
-			</form>
-			</div>
+		<div class="somebutton">
+			<input type=submit style='font-size:16pt' value="ログイン"></input>
 		</div>
+		</form>
+	</div>
 </body>
-<% } %>
 </html>

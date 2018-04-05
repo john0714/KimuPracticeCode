@@ -3,6 +3,7 @@ package com.higasi.booksystem;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -98,7 +99,12 @@ public class CreateUser {
 			return "Createuser";
 		}
 		
+		ConnectDB BookSource = (ConnectDB) context.getBean("ShowDataBase");
+		ArrayList<BookListEntity> BookList = new ArrayList<BookListEntity>();
+		BookList = BookSource.BookListShow();
+		model.addAttribute("TestList",BookList);
+		
 		JOptionPane.showMessageDialog(null, "使用者登録を完了しました");
-		return "redirect:index.jsp";
+		return "BookList";
 	}
 }

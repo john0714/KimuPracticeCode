@@ -76,7 +76,7 @@ public class ViewLog {
 			
 			String RentalType = "";
 			if(RentalCheck == 1) {
-				RentalType = "貸出し";
+				RentalType = "貸出";
 			} else {	
 				RentalType = "返納";
 			}

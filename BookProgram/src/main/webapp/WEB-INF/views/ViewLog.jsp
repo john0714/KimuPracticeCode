@@ -17,12 +17,20 @@
 
 <title>本システム履歴</title>
 </head>
+<% if(session.getAttribute("id")==null) { response.sendRedirect("index.jsp");%>
+<% } else { %>
 <body>
+<div class="container">
+	<div class="ManagementButtons">
+	<form action="BookList.do">
+		<input type="submit" value = "戻る"/>
+	</form>
+	</div>
 	<table class="table">
 		<tr class="warning">
-				<td>カウント</td>
-				<td>本の名前</td>
-				<td>人</td>
+				<td>No.</td>
+				<td>名前</td>
+				<td>ユーザー情報</td>
 				<td>時間</td>
 				<td>種類</td>
 		</tr>
@@ -30,15 +38,15 @@
 		<!-- 関数の中のインスタンス変数を呼んでできる -->
 		<c:forEach var="listValue" items="${LogList}">
 			<tr class="active">
-			<form action="rentalandreturn.do" method="post">
 				<td><c:out value="${listValue.ID}" /></td>
 				<td><c:out value="${listValue.BOOKNAME}" /></td>
 				<td><c:out value="${listValue.PEOPLENAME}" /></td>
 				<td><c:out value="${listValue.TIME}" /></td>
 				<td><c:out value="${listValue.RENTAL_CHECK}" /></td>
 			</tr>
-			</form>
 		</c:forEach>
 	</table>
+</div>
 </body>
+<% } %>
 </html>

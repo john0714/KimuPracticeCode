@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
 <title>本の追加画面</title>
 </head>
+<% if(session.getAttribute("id")==null) { response.sendRedirect("index.jsp");%>
+<% } else { %>
 <body>
 	<div class="AddBook">
 		<form action="AddBookData.do" method="post">
@@ -17,6 +19,12 @@
 			<p></p>
 			<input type="submit" style='font-size:16pt' value = "本を登録"/>
 		</form>
+		<div class="ManagementButtons">
+			<form action="BookList.do">
+				<input type="submit" value = "戻る"/>
+			</form>
+		</div>
 	</div>
 </body>
+<% } %>
 </html>
