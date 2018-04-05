@@ -4,7 +4,9 @@
 <%@ page import="org.springframework.context.*" %>
 <%@ page import="org.springframework.context.support.*" %>
 <%@ page import="org.springframework.jdbc.datasource.DriverManagerDataSource" %>
+<%@ page import="com.higasi.booksystem.Token" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,6 +64,10 @@
 		<c:forEach var="listValue" items="${TestList}">
 			<tr class="active">
 			<form action="rentalandreturn.do" method="post">
+				<%
+        			if(request.getAttribute("TOKEN_KEY")==null) Token.set(request);
+       			%>
+      			<input type="hidden" name="TOKEN_KEY" value="<%=request.getAttribute("TOKEN_KEY")%>"/>
 				<input type="hidden" value="${listValue.id}" name="id"/>
 				<input type="hidden" value="${listValue.rentalCheck}" name="RC"/>
 				<td><c:out value="${listValue.id}" /></td>
@@ -93,11 +99,11 @@
 				<c:if test="${listValue.rentalCheck eq 0}">
 					<!-- textの値を送るため hidden typeを作ります -->
 					<td>
-						<input type="submit" value="貸し出しする" />
+						<input type="submit" onclick="" value="貸し出しする" />
 					</td>
 				</c:if>
 				<c:if test="${listValue.rentalCheck eq 1}">
-					<td><input type="submit" value="返納する" /></td>
+					<td><input type="submit" onclick="" value="返納する" /></td>
 				</c:if>
 			</tr>
 			</form>
@@ -106,6 +112,27 @@
 </body>
 <% } %>
 <script>
+	/**
+	 * JavaScriptで複数サーブミット防止
+	 * 隙間がありますのでTokenの方法に帰ります。
+	 * @returns {Boolean}
+	 */
+	function insert() {
+		if(doubleSubmitCheck()) {
+			alert("処理中です。\n少々お待ちしてください。");
+		}
+	}
+	
+	var doubleSubmitFlag = false;
+	function doubleSubmitCheck(){
+    		if(doubleSubmitFlag){
+        		return doubleSubmitFlag;
+    		}else{
+        		doubleSubmitFlag = true;
+        		return false;
+    		}
+	}
+	
 	//Sort方法；insert Sort
 	var sortType = 'asc';
 	function sortTable(num) {
@@ -150,7 +177,5 @@
 			}
 		}
 	}
-	
-	
 </script>
 </html>
