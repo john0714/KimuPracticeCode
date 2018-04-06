@@ -16,12 +16,18 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css?ver=1" >
 <!-- bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
 <title>東新宿　本システム</title>
 </head>
-<% if(session.getAttribute("id")==null) { response.sendRedirect("index.jsp");%>
-<% } else { %>
-<body>
+<!-- onbeforeunload, onpageshow로 safari뒤로갔을때 이벤트(Chrome, IE는 없어도 가능)(일부러 GET으로 화면다시 보내서 페이지 안띄워지게함) -->
+<script>
+window.onpageshow = function(event) {
+    if (event.persisted) {
+    		alert("否定接続ですのでログイン画面に戻ります。")
+        window.location.replace("index.jsp");
+    }
+};
+</script>
+<body onbeforeunload="">
 <div class="container">
 	<header>
 	<div class="ManagementButtons">
@@ -112,7 +118,6 @@
 	</table>
 </div>
 </body>
-<% } %>
 <script>
 	/**
 	 * JavaScriptで複数サーブミット防止

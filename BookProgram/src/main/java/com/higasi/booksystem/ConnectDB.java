@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ConnectDB {
 	//必ずservlet-context.xmlの中の「return value」を入らなきゃならない。
 	@RequestMapping(value = "Login", method = RequestMethod.POST)
-	public String Booklist(HttpServletRequest request, HttpSession session, Model model) throws SQLException {
+	public String Booklist(HttpServletResponse response, HttpServletRequest request, HttpSession session, Model model) throws SQLException {	
 		String id = request.getParameter("idtext");
 		String password = request.getParameter("pwtext");
 		
@@ -36,6 +37,7 @@ public class ConnectDB {
 		Login LG = (Login) context.getBean("LoginConnect");
 		LG.loginset(id, password);
 		
+		//上手くログインできたらSession設定
 		if(LG.loginset(id, password) == 0) {
 			//Session設定
 			session.setAttribute("id", id);
@@ -64,10 +66,6 @@ public class ConnectDB {
 		ApplicationContext context = new ClassPathXmlApplicationContext("BookDBInfo.xml");
 		
 		try {
-			//一般的なJDBC連結
-			//Class.forName("com.mysql.jdbc.Driver");//mysql-connector
-			//conn=DriverManager.getConnection(url, DBid, DBpassword);
-			
 			//Spring JDBC Connect(DIコンテナ:XML)
 			//Spring Frameworkでは ApplicationContextがDIコンテナの役割を担います。
 			DriverManagerDataSource dataSource = (DriverManagerDataSource) context.getBean("kimuDBconnect");

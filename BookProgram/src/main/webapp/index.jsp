@@ -10,16 +10,6 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
 
 <title>マーキュリーBookシステム</title>
-<%   
-//그냥JSP용 no-cache처리, 스프링에선 안먹힘
-/*
-response.setHeader("Cache-Control","no-store");   
-response.setHeader("Pragma","no-cache");   
-response.setDateHeader("Expires",0);   
-if (request.getProtocol().equals("HTTP/1.1")) 
-        response.setHeader("Cache-Control", "no-cache"); 
-*/
-%>
 </head>
 <body>
 	<div class="login">

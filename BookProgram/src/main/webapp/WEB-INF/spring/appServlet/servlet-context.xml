@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -27,12 +28,19 @@
 	<aop:aspectj-autoproxy/>
 	
 	<!-- Spring no-cache setting -->
-	<interceptors>
+    <mvc:interceptors>
     <beans:bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
         <beans:property name="cacheSeconds" value="0" />
         <beans:property name="useExpiresHeader" value="true" />
         <beans:property name="useCacheControlHeader" value="true" />
         <beans:property name="useCacheControlNoStore" value="true" />
     </beans:bean>
-	</interceptors>
+    
+    <!-- Spring intercepto연습
+    <mvc:interceptor>
+    <mvc:mapping path="/*.do"/>
+    		<beans:bean class="com.higasi.booksystem.LoginInterceptor"/>
+    	</mvc:interceptor> -->
+    	
+	</mvc:interceptors>
 </beans:beans>
