@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<html lang="jp" dir="ltr">
 <!--
   180425
   シフト画面
   Html/css：ユンへリン
   機能構築：jhkim
 -->
-<html lang="jp" dir="ltr">
 <head>
   <script src="https://use.fontawesome.com/926fe18a63.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -23,13 +23,24 @@
 
   <title>シフト履歴</title>
      <?php
-	    date_default_timezone_set('Asia/Tokyo'); //  default地域設定
-        $monthlyDay = date("t"); //一か月の最終日
-        $month = date("m"); // 現在の時間を月をとってくる
-	      $year = date("Y");
-        $strtotime = $year."-".$month."-1"; //毎月1日の曜日を求めるための変数
-        $dailyInt = date('w', strtotime($strtotime)); // date関数は0~6の数字をreturnする
-        $daily = array('日','月','火','水','木','金','土');
+     $YMs = json_decode($_POST["Attendances_monthly"], true); //配列送信(trueは stdClassから Arrayに変更する為)
+     $Days = json_decode($_POST["Attendances_daily"], true);
+     $UserData = json_decode($_POST["Users"], true);
+     //selected YearMonth
+     date_default_timezone_set('Asia/Tokyo'); //  default地域設定
+     $monthlyDay = date("t"); //一か月の最終日
+     $month = date("m"); // 現在の月
+  	 $year = date("Y"); // 現在の年
+     $strtotime = $year."-".$month."-1"; //毎月1日の曜日を求めるための変数
+     $dailyInt = date('w', strtotime($strtotime)); // date関数は0~6の数字をreturnする
+     $daily = array('日','月','火','水','木','金','土');
+
+     $Daycheck = true;
+     $WP = "";
+     $ET = "";
+     $ST = "";
+     $RT = "";
+     $OT = 0;
      ?>
 </head>
 
@@ -53,19 +64,32 @@
     </div>
   </header>
 </div>
-
   <b>シフト履歴</b>
   <hr>
   <div class="timeSheet-form">
+    <form action="TimeSheet.php" name="phptest" method="post">
+      <input type="submit" onclick="exportdays()" name="test" class="download-btn"/>
+    </form>
+    <form action="ExcelTest.php" method="post">
     <div class="select-form">
-      <select>
-        <option id="YMs"></option>
-      </select>
-      <button type="button" name="search" class="search-btn">検索</button>
-      <form action="ExcelTest.php" method="post">
-      <input type="submit" name="memberInsert" class="download-btn" value="Excelダウンロード"></input>
+        <select name="YearMonth" id="YearMonth">
+          <?php //print Year and Month
+          foreach($YMs as $key=>$value) {
+            if($key == $year.$month) { ?>
+              <option selected><?=$key?></option>
+            <?php } else { ?>
+              <option><?=$key?></option>
+            <?php }
+          } ?>
+        </select>
+        <!-- Ajax -->
+        <button type="button" name="search" id="search" class="search-btn">検索</button>
+        <input type=submit name="ExcelExport" class="download-btn" value="Excelダウンロード"></input>
+  			<input type=hidden name="Attendances_daily" value=<?=json_encode($Days) ?>></input>
+  			<input type=hidden name="Users" value=<?=json_encode($UserData) ?>></input>
     </div>
-    <table>
+    </form>
+    <table id="refresh">
       <tr>
         <th class="small-cell">日</th>
         <th class="small-cell">曜</th>
@@ -76,118 +100,73 @@
         <th>残業</th>
         <th></th>
       </tr>
-      <?php for($i=1;$i<$monthlyDay+1;$i++){
+      <?php //print Days
+      for($i=1;$i<$monthlyDay+1;$i++) {
+      if($i < 10) $i = "0".$i; //日が 1~9の場合
       $day = $daily[$dailyInt]; //曜日を表すための変数
+      foreach($Days as $key=>$value) { //日出力して比較
+        if($year.$month.$i == $key) {
+          $Daycheck = true;
+          $WP = $value["workplace"];
+          $ST = $value["start_time"];
+          $ET = $value["end_time"];
+          $RT = $value["rest_time"];
+          $OT = substr($ET, 0, 2)-substr($ST, 0, 2)-substr($RT, 0, 2)-8; //残業時間
+          break;
+        } else {
+          $Daycheck = false;
+        }
+      }
       ?>
       <tr>
-        <td class="small-cell">
-          <?=$i?>
-        </td>
-        <td class="small-cell">
-          <?=$day?>
-        </td>
-        <td id="workplaces<?=$i //日付を後ろに表示?>"></td>
-        <td id="starttime<?=$i?>"></td>
-        <td id="endtime<?=$i?>"></td>
-        <td id="resttime<?=$i?>"></td>
-        <td id="overworktime<?=$i?>"></td>
-        <td><button type="button" class="modify-btn">編集</button></td>
+        <td class="small-cell"><?=$i?></td>
+        <td class="small-cell"><?=$day?></td>
+        <?php if($Daycheck == true) { ?>
+          <td><?=$WP?></td>
+          <td><?=$ST?></td>
+          <td><?=$ET?></td>
+          <td><?=$RT?></td>
+          <td><?=$OT?></td>
+          <td><button type="button" class="modify-btn">編集</button></td>
+        <?php } else { ?>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button type="button" class="modify-btn">編集</button></td>
+        <?php } ?>
       </tr>
-      <?php if($dailyInt<6) {$dailyInt++;} else {$dailyInt=0;}} //일주일 요일 초기화 ?>
+      <?php if($dailyInt<6) {$dailyInt++;} else {$dailyInt=0;}
+      } ?>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
         <td colspan="6"><textarea name="text" rows="8" cols="80"></textarea>
         </td>
       </tr>
     </table>
-    </form>
+  </div>
 
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCQ_M_PmSh6IqKXrZ7mBGFXlpkJy_QJeGs",
-        authDomain: "testproejct-d15c9.firebaseapp.com",
-        databaseURL: "https://testproejct-d15c9.firebaseio.com",
-        projectId: "testproejct-d15c9",
-        storageBucket: "testproejct-d15c9.appspot.com",
-        messagingSenderId: "557330742678"
-      };
-      firebase.initializeApp(config);
-
-      var auth, database, userInfo;
-      var Attendances_dailyRef, Attendances_monthlyRef, UsersRef;
-      database = firebase.database();
-
-      auth = firebase.auth();
-      var authProvider = new firebase.auth.GoogleAuthProvider(); //구글 인증창 선언
-      auth.onAuthStateChanged(function(user){
-        if (user) { //인증 성공
-          userInfo = user;
-
-          <?php for($day=1 ; $day < $monthlyDay+1 ; $day++){ ?>
-          //var day = '<?php echo $day ?>'; <--JS에 php의 변수 옮겨서 쓰는법
-
-          Attendances_dailyRef = database.ref('Attendances_daily/'
-                                              + userInfo.uid
-                                              + "/<?=$year?><?=$month?><?=$day?>" ); //yyyymmdd형식
-          UsersRef = database.ref('Users/' + userInfo.uid );
-          exportdays(<?=$day?>);
-          <?php } ?>
-
-          //내일 여기부터 시작
-          //Attendances_monthlyRef = database.ref('Attendances_monthly/'
-          //                                      + userInfo.uid
-          //                                      + "/<?=$year?><?=$month?>"); //년,월 부분 출력(검색)
-          //exportmonth();
-
-        } else { //인증 실패 → 인증 팝업이 뜸
-          auth.signInWithPopup(authProvider);
-        }
+  <script>
+  //ajax기본, JQuery
+  $('#search').click(function(){
+      $.ajax({
+          type: "POST", //데이터 보내는 형식
+          url: "TimeSheetTable.php", //요청이 보내지는곳 -> 즉, 값을 가져올곳, 테이블구성용 php가 필요
+          data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月
+                  "Attendances_monthly": <?=$_POST["Attendances_monthly"] ?>,
+                  "Attendances_daily": <?=$_POST["Attendances_daily"] ?>,
+                  "Users": <?=$_POST["Users"] ?>}, //urlに送る Parameter
+          success: function(datas){
+            //alert("Success");
+            //alert(datas);
+            $("#refresh").html(datas); //戻り値
+          },
+          error: function(xhr, status, error) {
+            alert(error);
+          }
       })
-
-      //出力
-      function exportdays(day) {
-        //DBRef.on('child_added', on_child_added);
-
-        UsersRef.on('value', function(data) {
-          document.getElementById("workplaces" + day).innerHTML = data.val().workplace;
-        });
-
-        Attendances_dailyRef.on('value', function(data) {
-            if(data.val()) { //Property null error check
-              document.getElementById("starttime" + day).innerHTML = data.val().start_time;
-              document.getElementById("endtime" + day).innerHTML = data.val().end_time;
-              document.getElementById("resttime" + day).innerHTML = data.val().rest_time;
-
-              if(data.val().end_time) {
-                var et = data.val().end_time.substring(0,2);
-                var st = data.val().start_time.substring(0,2);
-                var rt = data.val().rest_time.substring(0,1);
-                var overtime = et - st - rt - 8;
-                document.getElementById("overworktime" + day).innerHTML = overtime + ":00"; //残業時間
-              }
-            }
-        });
-      }
-
-      function exportmonth() {
-        Attendances_monthlyRef.on('value', function(data){
-          document.getElementById("YMs").innerHTML = data.key;
-        });
-      }
-
-      /*
-      function on_child_added(data) {
-        console.log( "key : " + data.key ); //key값( = 값이 들어있는 이름 )가져옴
-        console.log( "Example 1 : " +  data.val() );
-        console.log( "Example 1 : " +  data.val().subname ); //됨
-        var TempKey = data.key;
-        var pushdata = data.val().userid;
-        document.phptest.getjsvalue.value = pushdata;
-        alert(document.phptest.getjsvalue.value); //phpに値もらえます。
-      }
-      */
-    </script>
+  })
+  </script>
 </body>
 </html>
