@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
 <!--
-  180425
+  180427
   シフト画面
   Html/css：ユンへリン
   機能構築：jhkim
@@ -34,17 +34,12 @@
      $strtotime = $year."-".$month."-1"; //毎月1日の曜日を求めるための変数
      $dailyInt = date('w', strtotime($strtotime)); // date関数は0~6の数字をreturnする
      $daily = array('日','月','火','水','木','金','土');
-
-     $Daycheck = true;
-     $WP = "";
-     $ET = "";
-     $ST = "";
-     $RT = "";
-     $OT = 0;
+     $workarray = array();
      ?>
 </head>
 
 <body>
+<div class="overlay">
   <header>
     <div class="container">
       <div class="container-small">
@@ -70,6 +65,7 @@
     <form action="TimeSheet.php" name="phptest" method="post">
       <input type="submit" onclick="exportdays()" name="test" class="download-btn"/>
     </form>
+    <!-- Excel Export Form -->
     <form action="ExcelTest.php" method="post">
     <div class="select-form">
         <select name="YearMonth" id="YearMonth">
@@ -82,13 +78,11 @@
             <?php }
           } ?>
         </select>
-        <!-- Ajax -->
         <button type="button" name="search" id="search" class="search-btn">検索</button>
         <input type=submit name="ExcelExport" class="download-btn" value="Excelダウンロード"></input>
-  			<input type=hidden name="Attendances_daily" value=<?=json_encode($Days) ?>></input>
   			<input type=hidden name="Users" value=<?=json_encode($UserData) ?>></input>
     </div>
-    </form>
+    <!-- Ajax -->
     <table id="refresh">
       <tr>
         <th class="small-cell">日</th>
@@ -105,8 +99,14 @@
       if($i < 10) $i = "0".$i; //日が 1~9の場合
       $day = $daily[$dailyInt]; //曜日を表すための変数
       foreach($Days as $key=>$value) { //日出力して比較
+        $Daycheck = true;
+        $WP = "";
+        $ET = "";
+        $ST = "";
+        $RT = "";
+        $OT = 0;
+
         if($year.$month.$i == $key) {
-          $Daycheck = true;
           $WP = $value["workplace"];
           $ST = $value["start_time"];
           $ET = $value["end_time"];
@@ -121,7 +121,12 @@
       <tr>
         <td class="small-cell"><?=$i?></td>
         <td class="small-cell"><?=$day?></td>
-        <?php if($Daycheck == true) { ?>
+        <?php
+        $dayarray = array();
+        array_push($dayarray, $i, $day, $WP, $ST, $ET, $RT); //dayarray
+        array_push($workarray, $dayarray); //workarray
+        if($Daycheck == true) {
+        ?>
           <td><?=$WP?></td>
           <td><?=$ST?></td>
           <td><?=$ET?></td>
@@ -139,12 +144,17 @@
       </tr>
       <?php if($dailyInt<6) {$dailyInt++;} else {$dailyInt=0;}
       } ?>
+
+      <input type=hidden name="workdata" value=<?=json_encode($workarray) ?>></input>
+      <input type=hidden name="YM" value=<?=$year.$month ?>></input>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
-        <td colspan="6"><textarea name="text" rows="8" cols="80"></textarea>
+        <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
         </td>
       </tr>
+
     </table>
+    </form>
   </div>
 
   <script>
@@ -160,7 +170,7 @@
           success: function(datas){
             //alert("Success");
             //alert(datas);
-            $("#refresh").html(datas); //戻り値
+            $("#refresh").html(datas); //戻り値 -> テーブルに出力
           },
           error: function(xhr, status, error) {
             alert(error);
