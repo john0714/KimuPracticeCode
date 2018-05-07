@@ -17,6 +17,13 @@
         $(".headA").animate({width:"toggle"}, 200);
       });
     });
+
+    /* Enter Submit Event Remove */
+    document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        }
+    }, true);
   </script>
 
   <meta charset="utf-8">
@@ -68,7 +75,7 @@
   <hr>
   <div class="timeSheet-form">
     <!-- Excel Export Form -->
-    <form action="ExcelOutput.php" method="post">
+    <form action="ExcelExport.php" method="post">
     <div class="select-form">
         <select name="YearMonth" id="YearMonth">
           <?php //print Year and Month
@@ -81,7 +88,12 @@
           } ?>
         </select>
         <button type="button" name="search" id="search" class="search-btn">検索</button>
-        <input type="button" name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value="修正"/>
+
+        <!-- 修正ボタン  -->
+        <?php if($UserData["authority_id"] == 1) { ?>
+          <input type="button" name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value="修正"/>
+        <?php } ?>
+
         <input type=submit name="ExcelExport" class="download-btn" value="Excelダウンロード"></input>
   			<input type=hidden name="Users" value=<?=json_encode($UserData) ?>></input>
     </div>
@@ -156,7 +168,7 @@
     </form>
   </div>
 
-  <!-- javascript(node) Firebase 宣言-->
+  <!-- javascript(node.js) Firebase 宣言-->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script>
     // Initialize Firebase for modify
@@ -258,7 +270,7 @@
         if(document.getElementById("STid<?=$i?>") != null) {
 
           //修正文字形Check(正規表現式)
-          var Pattern = /^[0-9]{1,2}[:][0-9]{2}$/; //(~)~:~~形式
+          var Pattern = /^([1-9]|[01][0-9]|2[0-3])[:]([0-5][0-9])$/; //時間形式
           var ST = document.getElementById("STid<?=$i?>").value;
           var ET = document.getElementById("ETid<?=$i?>").value;
           var RT = document.getElementById("RTid<?=$i?>").value;
@@ -274,7 +286,7 @@
               },
             });
           } else {
-            alert("修正に失敗しました ~~:~~に形式に入力してください。");
+            alert("修正に失敗しました 時間の形式に入力してください。");
           }
         }
         <?php
