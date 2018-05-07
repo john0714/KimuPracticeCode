@@ -20,6 +20,7 @@
 			<input type=textarea name="Attendances_monthly" style='font-size:16pt'/>
 			<input type=textarea name="Attendances_daily" style='font-size:16pt'/>
 			<input type=textarea name="Users" style='font-size:16pt'/>
+			<input type=textarea name="AuthUser" style='font-size:16pt'/>
 		</form>
 	</div>
 	    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
@@ -42,15 +43,17 @@
 	      auth = firebase.auth();
 	      var authProvider = new firebase.auth.GoogleAuthProvider(); //구글 인증창 선언
 	      auth.onAuthStateChanged(function(user){
-	        if (user) { //인증 성공
+	        if (user) { //인증 성공 → need for login?
 	          userInfo = user;
+						document.GetValue.AuthUser.value = userInfo.uid; //uid
+
 	          Attendances_monthlyRef = database.ref('Attendances_monthly/'
-	                                                + userInfo.uid ); //년,월 부분 출력(검색)
+	                                                + userInfo.uid );
 						Attendances_dailyRef = database.ref('Attendances_daily/'
-																				          + userInfo.uid ); //년,월 부분 출력(검색)
+																				          + userInfo.uid );
 						UsersRef = database.ref('Users/'
-																								  + userInfo.uid ); //년,월 부분 출력(검색)
-	          exportmonth();
+																								  + userInfo.uid );
+						exportmonth();
 	        } else { //인증 실패 → 인증 팝업이 뜸
 	          auth.signInWithPopup(authProvider);
 	        }

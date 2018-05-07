@@ -58,13 +58,14 @@ button {
   right: 0;
   font-size: 0.8em;
   margin-right: 8%;
-  width: 100px;
   height: 40px;
+  width: 100px;
 }
 
 .modify-btn{
-  width: 60px;
-  height: 25px;
+  background-color: var(--light-btn-color);
+  height: 40px;
+  width: 100px;
 }
 
 select {

@@ -1,7 +1,5 @@
 <?php //POSTデータを呼び出してTableを作ります。
-$YMs = $_POST["Attendances_monthly"]; //Database month Data
-$Days = $_POST["Attendances_daily"]; //Database Days Data
-$UserData = $_POST["Users"]; //Database User Data
+$Days = $_POST["Attendances_daily"][0]; //Database Days Data
 //selected YearMonth in Timesheet
 $SelectYear = substr($_POST["YearMonth"], 0, 4);
 $SelectMonth = substr($_POST["YearMonth"], 4, 6);
@@ -24,7 +22,6 @@ $workarray = array();
         <th>退勤</th>
         <th>休憩</th>
         <th>残業</th>
-        <th></th>
       </tr>
       <?php //print Days
       for($i=1;$i<$monthlyDay+1;$i++) {
@@ -63,14 +60,12 @@ $workarray = array();
           <td><?=$ET?></td>
           <td><?=$RT?></td>
           <td><?=$OT?></td>
-          <td><button type="button" class="modify-btn">編集</button></td>
         <?php } else { ?>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td><button type="button" class="modify-btn">編集</button></td>
         <?php } ?>
       </tr>
       <?php if($dailyInt<6) {$dailyInt++;} else {$dailyInt=0;}

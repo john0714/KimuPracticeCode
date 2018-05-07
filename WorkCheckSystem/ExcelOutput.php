@@ -32,13 +32,13 @@
 
         /* User Data Input */
         $sheet -> setCellValue('C3', PHPExcel_Shared_Date::FormattedPHPToExcel($SelectedYear, $SelectedMonth, 1));
-        $sheet -> setCellValue('C4', '新規事業開発部');
+        $sheet -> setCellValue('C4', $UserData['department']);
         $sheet -> setCellValue('C5', $UserData['name_kana']);
         $sheet -> setCellValue('C6', $UserData['user_name']);
         $sheet -> setCellValue('C7', $UserData['user_id']);
-        $sheet -> setCellValue('C8', '社員');
+        $sheet -> setCellValue('C8', $UserData['division']);
         $sheet -> setCellValue('C9', $UserData['workplace']);
-        $sheet -> setCellValue('C10', $UserData['workplace']);
+        $sheet -> setCellValue('C10', $UserData['occupation']);
 
         /* User Daily Data Input */
         $cellint = 13;
