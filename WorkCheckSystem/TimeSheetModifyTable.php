@@ -40,7 +40,12 @@ $workarray = array();
           $ST = $value["start_time"];
           $ET = $value["end_time"];
           $RT = $value["rest_time"];
-          $OT = substr($ET, 0, 2)-substr($ST, 0, 2)-substr($RT, 0, 2)-8; //残業時間
+          $OTCal = (substr($ET, 0, 2)*60+substr($ET, 3, 5))
+                   - (substr($ST, 0, 2)*60+substr($ST, 3, 5))
+                   - (substr($RT, 0, 2)*60+substr($RT, 3, 5)) - 480;
+          $OTT = floor($OTCal/60);
+          $OTM = $OTCal%60;
+          $OT = $OTT.'時間 '.$OTM.'分';//残業時間
           break;
         } else {
           $Daycheck = false;
@@ -75,7 +80,7 @@ $workarray = array();
       <input type=hidden name="YM" value=<?=$SelectYM ?>></input>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
-        <td colspan="6"><textarea name="text" rows="8" cols="80"></textarea>
+        <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
         </td>
       </tr>
 
