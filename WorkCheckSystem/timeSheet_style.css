@@ -37,15 +37,6 @@ button {
   background-color: var(--light-btn-color);
 }
 
-.select-form {
-  display: flex;
-  margin-bottom: 3%;
-  flex-direction: row;
-  margin-top: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 .search-btn {
   background-color: var(--text-color);
   height: 40px;
@@ -54,7 +45,6 @@ button {
 
 .download-btn {
   background-color: var(--light-btn-color);
-  position: absolute;
   right: 0;
   font-size: 0.8em;
   margin-right: 8%;
@@ -86,6 +76,7 @@ header {
   left: 0;
   z-index: 100;
   opacity: 0.8;
+  margin-left: 8px;
 }
 
 header .container-small {
@@ -167,4 +158,32 @@ header .container-small {
   top: 50%;
   left: 50%;
   z-index: 100;
+}
+
+input {
+  font-size: 1em;
+  width: 2.8em;
+}
+
+.buttons-container {
+  display: flex; /* 横に並ぶ */
+  justify-content: space-between; /* 右左整列 */
+}
+
+.select-form {
+  display: flex;
+  margin-bottom: 3%;
+  flex-direction: row;
+  margin-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.button-form {
+  display: flex;
+  margin-bottom: 3%;
+  flex-direction: row;
+  margin-top: 30px;
+  padding-left: 10%;
+  padding-right: 12%;
 }

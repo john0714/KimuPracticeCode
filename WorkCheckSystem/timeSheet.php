@@ -79,8 +79,8 @@
   <hr>
   <div class="timeSheet-form">
     <!-- Excel Export Form -->
-    <form action="ExcelExport.php" method="post">
-    <section>
+  <form action="ExcelExport.php" method="post">
+  <div class=buttons-container>
     <div class="select-form">
         <select name="YearMonth" id="YearMonth">
           <?php //print Year and Month
@@ -93,16 +93,18 @@
           } ?>
         </select>
         <button type="button" name="search" id="search" class="search-btn">検索</button>
-        <!-- 修正ボタン  -->
-        <?php if($UserData["authority_id"] == 1) { ?>
-          <input type="button" name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value="修正"/>
-        <?php } ?>
-        <input type=submit name="ExcelExport" class="download-btn" value="Excelダウンロード"></input>
-  			<input type=hidden name="Users" value=<?=json_encode($UserData) ?>></input>
     </div>
-  </section>
+    <div class="button-form">
+      <!-- 修正ボタン  -->
+      <?php if($UserData["authority_id"] == 1) { ?>
+        <input type="button" name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value="修正"/>
+      <?php } ?>
+      <input type=submit name="ExcelExport" class="download-btn" value="Excelダウン"></input>
+      <input type=hidden name="Users" value=<?=json_encode($UserData) ?>></input>
+    </div>
+  </div>
     <!-- Ajax table -->
-    <!-- 以下のテーブルの内容は現在の運営にはいらないが、開発した時のテスト用テーブルなので残します -->
+    <!-- 以下のテーブルの内容は現在の運営には特にいらないが、開発した時のテスト用テーブルなので残します -->
     <table id="refresh">
       <tr>
         <th class="small-cell">日</th>
@@ -305,10 +307,11 @@
 
           //修正文字形Check(正規表現式)
           var Pattern = /^([1-9]|[01][0-9]|2[0-3])[:]([0-5][0-9])$/; //時間形式
+          var RTPattern = /^[0-9][:]([0-5][0-9])$/; //時間形式
           var ST = document.getElementById("STid<?=$i?>").value;
           var ET = document.getElementById("ETid<?=$i?>").value;
           var RT = document.getElementById("RTid<?=$i?>").value;
-          if(Pattern.test(ST) && Pattern.test(ET) && Pattern.test(RT)) {
+          if(Pattern.test(ST) && Pattern.test(ET) && RTPattern.test(RT)) {
             //修正
             var SelectYMD = SelectYM + '<?=$i?>';
             Attendances_dailyRef.update({
