@@ -67,7 +67,7 @@
         <ul>
             <li><a href="#">出・退勤</a></li>
             <li><a href="#">個人情報</a></li>
-            <li><a href="MyTimeSheet.php?AuthUser=<?=$AuthUser?>">履歴</a></li>
+            <li><a href="#">履歴</a></li>
             <li><a href="#">管理者</a></li>
             <li><a href="#">ログアウト</a></li>
         </ul>

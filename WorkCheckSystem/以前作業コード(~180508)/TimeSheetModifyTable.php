@@ -88,4 +88,5 @@ $workarray = array();
         <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
         </td>
       </tr>
+
     </table>

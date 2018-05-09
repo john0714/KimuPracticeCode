@@ -8,9 +8,15 @@
 <title>テストページ</title>
 </head>
 <body>
-	<div class="社員のメニュー">
+	<div class="Test1">
+    <?php
+    //echo "=======================";
+    //echo $_POST["getjsvalue"]; //変数で値もらえる
+    //echo $_GET["getjsvalue"]; //変数で値もらえる
+    //echo "=======================";
+    ?>
 		<form action="TimeSheet.php" name="GetValue" method="post">
-			<input type=submit style='font-size:16pt' value="シフト履歴"/>
+			<input type=submit style='font-size:16pt' value="シフト画面に行こう"/>
 			<input type=textarea name="Attendances_monthly" style='font-size:16pt'/>
 			<input type=textarea name="Attendances_daily" style='font-size:16pt'/>
 			<input type=textarea name="Users" style='font-size:16pt'/>
