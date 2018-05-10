@@ -1,7 +1,11 @@
 <?php
+  /*
+  自分のシフト初期画面設定(Button-form)
+  180509
+  jhkim
+  */
   $UserData = $_POST["Users"][0];
 ?>
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <div class="button-form">
     <!-- 修正ボタン  -->
     <?php if($UserData["authority_id"] == 1) { ?>

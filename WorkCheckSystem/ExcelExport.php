@@ -6,7 +6,7 @@
         <?php
         /*
           180501
-          Excel出力
+          Excel出力(勤務表)
           jhkim
         */
 
@@ -53,6 +53,8 @@
           $cellint++;
         }
         $sheet -> setCellValue('A46', $_POST['note']); //note
+        $sheet -> mergeCells('A46:O48'); //A46~O48まで
+        $sheet->getStyle('A46:O48')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_LEFT); //Horizontal_left
         $sheet -> setTitle($YMs); //sheet name
 
         /* Export Excel File */

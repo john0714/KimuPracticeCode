@@ -1,8 +1,12 @@
 <?php
-  $YMs = $_POST["Attendances_monthly"][0]; //配列送信(trueは stdClassから Arrayに変更する為)
+  /*
+    自分のシフト初期画面設定(Select-form)
+    180509
+    jhkim
+  */
+  $YMs = $_POST["Attendances_monthly"][0]; //配列送信
   $selectYM = $_POST["YearMonth"];
 ?>
-
 <div class="select-form" id="SF">
       <select name="YearMonth" id="YearMonth">
         <?php //print Year and Month
