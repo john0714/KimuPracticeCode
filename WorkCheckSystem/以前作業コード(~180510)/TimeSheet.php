@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="jp" dir="ltr">
 <!--
-  180508
+  180509
   シフト画面
   Html/css：ユンへリン
   機能構築：jhkim
@@ -67,7 +67,7 @@
         <ul>
             <li><a href="#">出・退勤</a></li>
             <li><a href="#">個人情報</a></li>
-            <li><a href="#">履歴</a></li>
+            <li><a href="MyTimeSheet.php?AuthUser=<?=$AuthUser?>">履歴</a></li>
             <li><a href="#">管理者</a></li>
             <li><a href="#">ログアウト</a></li>
         </ul>
@@ -209,7 +209,7 @@
   firebase.initializeApp(config);
   var database, userInfo;
   database = firebase.database();
-  userInfo='<?=$AuthUser?>';
+  userInfo='<?=$AuthUser?>'; //すでに認証された情報を持って来ます
 
   //update and refresh
   var Attendances_dailyRef = database.ref('Attendances_daily/' + userInfo );
@@ -221,7 +221,7 @@
     Attendances_daily = data.val();
     $.ajax({
         type: "POST", //データ送信形式
-        url: "TimeSheetSearchTable.php", //請求される場所-> 즉, 값을 가져올곳, 테이블구성용 php가 필요
+        url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
         data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
                 "Attendances_daily": [Attendances_daily]
                }, //urlに送る Parameter
@@ -246,7 +246,7 @@
       SelectYM = document.getElementById("YearMonth").value; //SelectYM Save
       $.ajax({
           type: "POST", //データ送信形式
-          url: "TimeSheetSearchTable.php", //請求される場所-> 즉, 값을 가져올곳, 테이블구성용 php가 필요
+          url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
           data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
                   "Attendances_daily": [Attendances_daily]
                  }, //urlに送る Parameter
@@ -268,7 +268,7 @@
       document.getElementById("modify").value = "修正終了";
       $.ajax({
         type: "POST", //データ送信形式
-        url: "TimeSheetModifyTable.php", //請求される場所 -> 즉, 값을 가져올곳, 테이블구성용 php가 필요
+        url: "TimeSheetModifyTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
         data : {"YearMonth": SelectYM, //選択した年月
                 "Attendances_daily": [Attendances_daily]
                }, //urlに送る Parameter
@@ -283,7 +283,7 @@
     document.getElementById("modify").value = "修正";
     $.ajax({
         type: "POST", //データ送信形式
-        url: "TimeSheetSearchTable.php", //請求される場所 -> 즉, 값을 가져올곳, 테이블구성용 php가 필요
+        url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
         data : {"YearMonth": SelectYM, //選択した年月  -> JSON形式
                 "Attendances_daily": [Attendances_daily]
                }, //urlに送る Parameter

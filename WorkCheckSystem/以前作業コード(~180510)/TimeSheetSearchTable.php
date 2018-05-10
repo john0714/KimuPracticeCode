@@ -1,4 +1,9 @@
-<?php //POSTデータを呼び出してTableを作ります。
+<?php
+/*
+  180427
+  POSTデータを呼び出してテーブルを更新(検索)します
+  jhkim1
+*/
 $Days = $_POST["Attendances_daily"][0]; //Database Days Data
 //selected YearMonth in Timesheet
 $SelectYear = substr($_POST["YearMonth"], 0, 4);

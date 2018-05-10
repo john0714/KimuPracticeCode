@@ -1,4 +1,9 @@
-<?php //POSTデータを呼び出してTableを作ります。
+<?php
+/*
+  180507
+  修正テーブルに変えます
+  jhkim1
+*/
 $Days = $_POST["Attendances_daily"][0]; //Database Days Data
 //selected YearMonth in Timesheet
 $SelectYear = substr($_POST["YearMonth"], 0, 4);
@@ -88,5 +93,4 @@ $workarray = array();
         <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
         </td>
       </tr>
-
     </table>
