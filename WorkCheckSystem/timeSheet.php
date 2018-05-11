@@ -10,7 +10,7 @@
   <script src="https://use.fontawesome.com/926fe18a63.js"></script>
   <!-- javascript jquery 宣言 -->
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-  <!-- javascript(node.js) Firebase 宣言-->
+  <!-- javascript(node.js) Firebase, Auth 宣言-->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script type="text/javascript" src="ProjectAuth.js"></script>
 
@@ -27,14 +27,6 @@
         event.preventDefault();
         }
     }, true);
-
-    auth.onAuthStateChanged(function(user){ //Authentication ChangeCheck(Sessioncheck)
-      if (user) { //Authentication User is signed in. → don't need Other Authentication
-        userInfo = user.uid;
-      } else { //Authentication No user is signed in. → need Other Authentication
-        alert("ログインされていません!");
-      }
-    })
   </script>
 
   <meta charset="utf-8">
@@ -44,8 +36,6 @@
   <title>シフト履歴</title>
 
   <?php
-    //初期出力の値
-    $AuthUser = $_GET["AuthUser"]; //持って来たユーザーのuid
     //selected YearMonth
     date_default_timezone_set('Asia/Tokyo'); //  default地域設定
     $monthlyDay = date("t"); //一か月の最終日
@@ -123,87 +113,116 @@
       <input type=hidden name="YM" value=<?=$year.$month ?>></input>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
-        <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
-        </td>
+        <td colspan="4"><textarea name="note" id="note" rows="8" cols="80"></textarea></td>
+        <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
     </table>
     </form>
   </div>
 
   <script>
-  userInfo='<?=$AuthUser?>';
-
-  //update and refresh
-  var Attendances_dailyRef = database.ref('Attendances_daily/' + userInfo );
-  var Attendances_monthlyRef = database.ref('Attendances_monthly/' + userInfo );
-  var UsersRef = database.ref('Users/' + userInfo );
-  var SelectYM = <?=$year.$month?>; //SelectYM Save
+  var Attendances_dailyRef = "";
+  var Attendances_monthlyRef = "";
+  var UsersRef = "";
+  var SelectYM = "";
+  var Notevalue = "";
 
   // Firebase Lodaing....
   $(window).load(function() {
-    // Pageloading start
-    Attendances_dailyRef.on('value', function(data){
-    Attendances_daily = data.val();
-      $.ajax({
-        type: "POST", //データ送信形式
-        url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
-        data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
-                "Attendances_daily": [Attendances_daily]
-               }, //urlに送る Parameter
-        success: function(datas){
-          $("#refresh").html(datas); //戻り値 -> テーブルに出力
-        },
-        error: function(xhr, status, error) {
-          alert(error);
+    /* UserAuth Check */
+    <?php if(empty($_GET["AuthUser"])) { ?> //$_GET Empty Check
+      auth.onAuthStateChanged(function(user){ //Authentication ChangeCheck(Sessioncheck)
+        if (user) { //Authentication User is signed in. → don't need Other Authentication
+          userInfo = user.uid;
+          alert("ログイン確認完了!");
+          Pageloading();
+        } else { //Authentication No user is signed in. → need Other Authentication
+          alert("正しい接近ではありません! 初期画面に移動します!");
+          window.location.href = "index.php";
         }
       })
-    $('#loading').hide(); //Loading End
-    });
+    <?php } else { ?>
+      userInfo = "<?=$_GET["AuthUser"]?>";
+      Pageloading();
+    <?php } ?>
 
-    Attendances_monthlyRef.on('value', function(data){
-      Attendances_monthly = data.val();
+    function Pageloading() {
+      //update and refresh
+      Attendances_dailyRef = database.ref('Attendances_daily/' + userInfo );
+      Attendances_monthlyRef = database.ref('Attendances_monthly/' + userInfo );
+      UsersRef = database.ref('Users/' + userInfo );
+      SelectYM = <?=$year.$month?>; //SelectYM Save
+      Notevalue = "";
+
+      /* Pageloading start */
+      Attendances_monthlyRef.on('value', function(data){
+        Attendances_monthly = data.val();
+        Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
+        $.ajax({
+            type: "POST", //データ送信形式
+            url: "TimeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
+            data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+                    "Attendances_monthly": Attendances_monthly
+                   }, //urlに送る Parameter
+            success: function(datas){
+              $("#SF").html(datas); //戻り値 -> テーブルに出力
+            },
+            error: function(xhr, status, error) {
+              alert(error);
+            }
+        })
+      })
+
+      UsersRef.on('value', function(data) {
+      Users = data.val();
       $.ajax({
           type: "POST", //データ送信形式
-          url: "TimeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
-          data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
-                  "Attendances_monthly": [Attendances_monthly]
+          url: "TimeSheetButton.php", //請求される場所 -> つまり、データを取る場所です
+          data : {
+                  "Users": Users
                  }, //urlに送る Parameter
           success: function(datas){
-            $("#SF").html(datas); //戻り値 -> テーブルに出力
+            $("#BF").html(datas); //戻り値 -> テーブルに出力
           },
           error: function(xhr, status, error) {
             alert(error);
           }
+        })
       })
-    })
 
-    UsersRef.on('value', function(data) {
-    Users = data.val();
-    $.ajax({
-        type: "POST", //データ送信形式
-        url: "TimeSheetButton.php", //請求される場所 -> つまり、データを取る場所です
-        data : {
-                "Users": [Users]
-               }, //urlに送る Parameter
-        success: function(datas){
-          $("#BF").html(datas); //戻り値 -> テーブルに出力
-        },
-        error: function(xhr, status, error) {
-          alert(error);
-        }
-      })
-    })
+      Attendances_dailyRef.on('value', function(data){
+      Attendances_daily = data.val();
+        $.ajax({
+          type: "POST", //データ送信形式
+          url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
+          data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+                  "Attendances_daily": Attendances_daily,
+                  "Notevalue": Notevalue
+                 }, //urlに送る Parameter
+          success: function(datas){
+            $("#refresh").html(datas); //戻り値 -> テーブルに出力
+          },
+          error: function(xhr, status, error) {
+            alert(error);
+          }
+        })
+      $('#loading').hide(); //Loading End
+      });
+      /* Pageloading END */
+    }
   });
 
   /* Ajax for Search - TimeSheetType */
-  $(document).on('click', '.select-form', function(){
+  $(document).on('click', '.search-btn', function(){
       document.getElementById("modify").value = "修正";
       SelectYM = document.getElementById("YearMonth").value; //SelectYM Save
+      Notevalue = Attendances_monthly[SelectYM]["attendances_memo"]; //Notevalue save
       $.ajax({
           type: "POST", //データ送信形式
           url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
           data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
-                  "Attendances_daily": [Attendances_daily]
+                  "Attendances_daily": Attendances_daily,
+                  "Notevalue": Notevalue
                  }, //urlに送る Parameter
           success: function(datas){
             //alert("Success");
@@ -225,7 +244,8 @@
         type: "POST", //データ送信形式
         url: "TimeSheetModifyTable.php", //請求される場所 -> つまり、データを取る場所です
         data : {"YearMonth": SelectYM, //選択した年月
-                "Attendances_daily": [Attendances_daily]
+                "Attendances_daily": Attendances_daily,
+                "Notevalue": Notevalue
                }, //urlに送る Parameter
         success: function(datas){
           $("#refresh").html(datas); //戻り値 -> テーブルに出力
@@ -240,7 +260,8 @@
         type: "POST", //データ送信形式
         url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
         data : {"YearMonth": SelectYM, //選択した年月  -> JSON形式
-                "Attendances_daily": [Attendances_daily]
+                "Attendances_daily": Attendances_daily,
+                "Notevalue": Notevalue
                }, //urlに送る Parameter
         success: function(datas){
           $("#refresh").html(datas); //戻り値 -> テーブルに出力
@@ -290,6 +311,16 @@
         <?php
         } ?>
       }
+    }
+
+    /* Note Value Save */
+    function SaveNote() {
+      Attendances_monthlyRef.child(SelectYM).once("value", function(snap){ //一つのデータだけに入れる
+        snap.ref.update({
+            attendances_memo: $("textarea").val()
+        })
+      })
+      alert("セーブ完了");
     }
   </script>
 </body>

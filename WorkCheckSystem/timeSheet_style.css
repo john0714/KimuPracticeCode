@@ -58,6 +58,12 @@ button {
   width: 100px;
 }
 
+.note-btn{
+  background-color: var(--light-btn-color);
+  height: 40px;
+  width: 100px;
+}
+
 select {
   font-size: 20px;
   height: 40px;

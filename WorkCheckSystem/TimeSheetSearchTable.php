@@ -4,10 +4,11 @@
   POSTデータを呼び出してテーブルを更新(検索)します
   jhkim1
 */
-$Days = $_POST["Attendances_daily"][0]; //Database Days Data
-//selected YearMonth in Timesheet
+$Days = $_POST["Attendances_daily"]; //Database Days Data
 $SelectYear = substr($_POST["YearMonth"], 0, 4);
 $SelectMonth = substr($_POST["YearMonth"], 4, 6);
+$note = $_POST["Notevalue"];
+//selected YearMonth in Timesheet
 $SelectYM = $SelectYear.$SelectMonth;
 $time = mktime(0, 0, 0, $SelectMonth, 1, $SelectYear);
 $monthlyDay = date("t", $time); //一か月の最終日
@@ -89,9 +90,10 @@ $workarray = array();
       <input type=hidden name="workdata" value=<?=json_encode($workarray) ?>></input>
       <input type=hidden name="YM" value=<?=$SelectYM ?>></input>
       <tr class="memo-cell">
+        <!-- colspan = cols weight -->
         <th colspan="2">備考</th>
-        <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
-        </td>
+        <td colspan="4"><textarea name="note" rows="8" cols="80"><?=$note?></textarea></td>
+        <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
 
     </table>

@@ -4,7 +4,7 @@
     180509
     jhkim
   */
-  $YMs = $_POST["Attendances_monthly"][0]; //配列送信
+  $YMs = $_POST["Attendances_monthly"]; //配列送信
   $selectYM = $_POST["YearMonth"];
 ?>
 <div class="select-form" id="SF">

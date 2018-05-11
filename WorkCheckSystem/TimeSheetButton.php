@@ -4,7 +4,7 @@
   180509
   jhkim
   */
-  $UserData = $_POST["Users"][0];
+  $UserData = $_POST["Users"];
 ?>
 <div class="button-form">
     <!-- 修正ボタン  -->
