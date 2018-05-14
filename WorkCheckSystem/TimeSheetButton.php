@@ -6,7 +6,7 @@
   */
   $UserData = $_POST["Users"];
 ?>
-<div class="button-form">
+<div class="button-form" id="BF">
     <!-- 修正ボタン  -->
     <?php if($UserData["authority_id"] == 1) { ?>
       <input type="button" name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value="修正"/>

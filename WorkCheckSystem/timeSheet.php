@@ -66,7 +66,8 @@
             <li><a href="#">出・退勤</a></li>
             <li><a href="#">個人情報</a></li>
             <!-- ログインした人の履歴に移動 -->
-            <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li>
+            <!-- <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li> -->
+            <li><a href="TimeSheet.php">履歴</a></li>
             <li><a href="#">管理者</a></li>
             <li><a href="#">ログアウト</a></li>
         </ul>
@@ -77,15 +78,19 @@
   <b>シフト履歴</b>
   <hr>
   <div class="timeSheet-form">
-    <!-- Excel Export Form -->
+  <!-- Excel Export Form -->
   <form action="ExcelExport.php" method="post">
+  <!-- Ajax cssの為の基本HTML構造設定 -->
   <div class=buttons-container>
     <div class="select-form" id="SF">
         <select name="YearMonth" id="YearMonth">
+          <option selected></option>
         </select>
         <button type="button" name="search" id="search" class="search-btn">検索</button>
     </div>
     <div class="button-form" id="BF">
+      <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/>
+      <input type=submit name="ExcelExport" class="download-btn" value="Excelダウン"></input>
     </div>
   </div>
     <!-- Ajax table -->
@@ -130,18 +135,17 @@
   // Firebase Lodaing....
   $(window).load(function() {
     /* UserAuth Check */
-    <?php if(empty($_GET["AuthUser"])) { ?> //$_GET Empty Check
-      auth.onAuthStateChanged(function(user){ //Authentication ChangeCheck(Sessioncheck)
-        if (user) { //Authentication User is signed in. → don't need Other Authentication
+    <?php if(empty($_GET["AuthUser"])) { ?> //$_GET Empty Check(Menuから入った場合)
+      auth.onAuthStateChanged(function(user){ //Authentication ChangeCheck(Sessioncheck = Login Check)
+        if (user) { //Authentication User is signed in. → don't need Authentication
           userInfo = user.uid;
-          alert("ログイン確認完了!");
           Pageloading();
-        } else { //Authentication No user is signed in. → need Other Authentication
+        } else { //Authentication No user is signed in. → need Authentication
           alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "index.php";
+          window.location.href = "index.php"; //Login画面
         }
       })
-    <?php } else { ?>
+    <?php } else { ?> //管理者画面から入った場合
       userInfo = "<?=$_GET["AuthUser"]?>";
       Pageloading();
     <?php } ?>

@@ -3,6 +3,27 @@
   --light-btn-color: #3f6ac1;
 }
 
+/* Loading div */
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
 hr {
   color: var(--light-btn-color);
   border: 1px solid;
@@ -10,17 +31,9 @@ hr {
 
 b {
   margin-top: 10px;
-  padding-left: 10%;
+  padding-left: 15%;
   color: var(--text-color);
   font-size: 1.5em;
-}
-
-table {
-  color: black;
-  margin: 0 auto;
-  text-align: center;
-  width: 60%;
-  border-collapse: collapse;
 }
 
 th, td {
@@ -37,33 +50,6 @@ button {
   background-color: var(--light-btn-color);
 }
 
-.search-btn {
-  background-color: var(--text-color);
-  height: 40px;
-  width: 100px;
-}
-
-.download-btn {
-  background-color: var(--light-btn-color);
-  right: 0;
-  font-size: 0.8em;
-  margin-right: 8%;
-  height: 40px;
-  width: 100px;
-}
-
-.modify-btn{
-  background-color: var(--light-btn-color);
-  height: 40px;
-  width: 100px;
-}
-
-.note-btn{
-  background-color: var(--light-btn-color);
-  height: 40px;
-  width: 100px;
-}
-
 select {
   font-size: 20px;
   height: 40px;
@@ -71,8 +57,9 @@ select {
   text-align-last: center;
 }
 
-.small-cell {
-  width: 6%;
+input {
+  font-size: 1em;
+  width: 2.8em;
 }
 
 /* ヘッダー */
@@ -91,8 +78,6 @@ header .container-small {
   justify-content: space-between;
   background-color: black;
 }
-
-/* ヘッダーB：ナビゲーションメニュー */
 
 .headA ul {
   margin: 0;
@@ -145,51 +130,65 @@ header .container-small {
   width: 100%;
 }
 
-/* Loading.... */
-#loading {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  position: fixed;
-  display: block;
-  opacity: 0.7;
-  background-color: #fff;
-  z-index: 99;
-  text-align: center;
-}
+@media (min-width: 768px) {
+  .buttons-container {
+    display: flex; /* 横に並ぶ */
+    justify-content: space-between; /* 右左整列 */
+  	max-width: 1000px;
+  	margin-left: auto;
+  	margin-right: auto;
+  }
 
-#loading-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 100;
-}
-
-input {
-  font-size: 1em;
-  width: 2.8em;
-}
-
-.buttons-container {
-  display: flex; /* 横に並ぶ */
-  justify-content: space-between; /* 右左整列 */
+  table {
+    color: black;
+  	max-width: 1000px;
+  	margin-left: auto;
+  	margin-right: auto;
+    text-align: center;
+    width: 60%;
+    border-collapse: collapse;
+  }
 }
 
 .select-form {
   display: flex;
-  margin-bottom: 3%;
   flex-direction: row;
-  margin-top: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
+  margin-top: 10px;
+  padding-left: 5%;
 }
 
 .button-form {
   display: flex;
-  margin-bottom: 3%;
   flex-direction: row;
-  margin-top: 30px;
-  padding-left: 10%;
-  padding-right: 12%;
+  margin-top: 10px;
+  padding-right: 5%;
 }
+
+.search-btn {
+  background-color: var(--text-color);
+  height: 40px;
+  width: 100px;
+}
+
+.download-btn {
+  background-color: var(--light-btn-color);
+  right: 0;
+  margin-right: 8%;
+  height: 40px;
+  width: 100px;
+}
+
+.modify-btn, .note-btn{
+  background-color: var(--light-btn-color);
+  height: 40px;
+  width: 100px;
+}
+
+.small-cell {
+  width: 6%;
+}
+
+/* 以下、モバイル環境CSS
+@media (max-width: 767px) {
+
+} */
