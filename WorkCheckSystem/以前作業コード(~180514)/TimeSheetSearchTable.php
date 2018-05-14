@@ -1,13 +1,14 @@
 <?php
 /*
-  180507
-  修正テーブルに変えます
+  180427
+  POSTデータを呼び出してテーブルを更新(検索)します
   jhkim1
 */
-$Days = $_POST["Attendances_daily"][0]; //Database Days Data
-//selected YearMonth in Timesheet
+$Days = $_POST["Attendances_daily"]; //Database Days Data
 $SelectYear = substr($_POST["YearMonth"], 0, 4);
 $SelectMonth = substr($_POST["YearMonth"], 4, 6);
+$note = $_POST["Notevalue"];
+//selected YearMonth in Timesheet
 $SelectYM = $SelectYear.$SelectMonth;
 $time = mktime(0, 0, 0, $SelectMonth, 1, $SelectYear);
 $monthlyDay = date("t", $time); //一か月の最終日
@@ -50,10 +51,10 @@ $workarray = array();
                    - (substr($RT, 0, 1)*60+substr($RT, 2, 4)) - 480;
           if(($OTCal/60) < 0) {
             $OTT = ceil($OTCal/60);
-          } else {
+          } else{
             $OTT = floor($OTCal/60);
           }
-          if($OTT == -0) $OTT = 0; //-0 -> 0
+          if($OTT == -0) $OTT = 0;  //-0 -> 0
           $OTM = $OTCal%60;
           $OT = $OTT.'時間 '.$OTM.'分';//残業時間
           break;
@@ -70,10 +71,10 @@ $workarray = array();
         array_push($dayarray, $i, $day, $WP, $ST, $ET, $RT); //dayarray
         array_push($workarray, $dayarray); //workarray
         if($Daycheck == true) { ?>
-          <td id="WPid<?=$i?>"><?=$WP?></td>
-          <td><input type="text" id="STid<?=$i?>" value=<?=$ST?>></input></td> <!-- StartTime -->
-          <td><input type="text" id="ETid<?=$i?>" value=<?=$ET?>></input></td> <!-- EndTime -->
-          <td><input type="text" id="RTid<?=$i?>" value=<?=$RT?>></input></td> <!-- RestTime -->
+          <td><?=$WP?></td>
+          <td><?=$ST?></td>
+          <td><?=$ET?></td>
+          <td><?=$RT?></td>
           <td><?=$OT?></td>
         <?php } else { ?>
           <td></td>
@@ -89,8 +90,10 @@ $workarray = array();
       <input type=hidden name="workdata" value=<?=json_encode($workarray) ?>></input>
       <input type=hidden name="YM" value=<?=$SelectYM ?>></input>
       <tr class="memo-cell">
+        <!-- colspan = cols weight -->
         <th colspan="2">備考</th>
-        <td colspan="6"><textarea name="note" rows="8" cols="80"></textarea>
-        </td>
+        <td colspan="4"><textarea name="note" rows="8" cols="80"><?=$note?></textarea></td>
+        <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
+
     </table>

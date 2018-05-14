@@ -74,7 +74,7 @@ $workarray = array();
           <td><?=$WP?></td>
           <td><?=$ST?></td>
           <td><?=$ET?></td>
-          <td><?=$RT?></td>
+          <td><?=$RT?></td><!-- popup and GPS MAP Add(C Rank) -->
           <td><?=$OT?></td>
         <?php } else { ?>
           <td></td>

@@ -18,3 +18,10 @@ var Attendances_monthlyRef, Attendances_dailyRef, UsersRef;
 database = firebase.database();
 auth = firebase.auth();
 var authProvider = new firebase.auth.GoogleAuthProvider(); //Google Authentication Various
+//auth.createUserWithEmailAndPassword("john0712@naver.com", "123456") //ただのID, PW生成(メールとPW)
+//auth.signInWithEmailAndPassword("john0712@naver.com", "123456")// ID, PW ログイン(メールとPW)
+//auth.signInWithEmailAndPassword("john0712@naver.com", "123456").then(function(user) {
+//	var userssss = auth.currentUser;
+//  alert(userssss.uid);
+//}) // ID, PW ログイン(メールとPW)
+//auth.signOut() //ログアウト, しないとsignされた認証が残されます。

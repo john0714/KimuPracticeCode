@@ -27,13 +27,6 @@
 		</form>
 	</div>
 			<script>
-			//auth.createUserWithEmailAndPassword("john0712@naver.com", "123456") //ただのID, PW生成(メールとPW)
-			auth.signInWithEmailAndPassword("john0712@naver.com", "123456")// ID, PW ログイン(メールとPW)
-			//auth.signInWithEmailAndPassword("john0712@naver.com", "123456").then(function(user) {
-			//	var userssss = auth.currentUser;
-			//  alert(userssss.uid);
-			//}) // ID, PW ログイン(メールとPW)
-			//auth.signOut() //ログアウト, しないとsignされた認証が残されます。
 	      auth.onAuthStateChanged(function(user){ //Authentication ChangeCheck(Sessioncheck)
 	        if (user) { //Authentication User is signed in. → don't need Other Authentication
 	          userInfo = user;
@@ -48,7 +41,6 @@
 						// exportmonth();
 	        } else { //Authentication No user is signed in. → need Other Authentication
 	          auth.signInWithPopup(authProvider); //上で設定した Google Authentication認証 and save
-						//alert("문제발생");
 	        }
 	      })
 

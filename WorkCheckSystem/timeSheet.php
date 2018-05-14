@@ -218,7 +218,9 @@
 
   /* Ajax for Search - TimeSheetType */
   $(document).on('click', '.search-btn', function(){
-      document.getElementById("modify").value = "修正";
+      if(document.getElementById("modify")) { //ユーザーの場合の確認
+        document.getElementById("modify").value = "修正";
+      }
       SelectYM = document.getElementById("YearMonth").value; //SelectYM Save
       Notevalue = Attendances_monthly[SelectYM]["attendances_memo"]; //Notevalue save
       $.ajax({
