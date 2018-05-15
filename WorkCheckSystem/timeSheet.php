@@ -12,7 +12,7 @@
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <!-- javascript(node.js) Firebase, Auth 宣言-->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script type="text/javascript" src="ProjectAuth.js"></script>
+  <script type="text/javascript" src="dbjs.js"></script>
 
   <script>
     $(document).ready(function(){
@@ -27,6 +27,8 @@
         event.preventDefault();
         }
     }, true);
+
+    var userInfo;
   </script>
 
   <meta charset="utf-8">
@@ -142,7 +144,7 @@
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
           alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "index.php"; //Login画面
+          window.location.href = "mLogin.html"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合

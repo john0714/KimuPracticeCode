@@ -11,8 +11,8 @@
   <!-- javascript jquery 宣言 -->
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <!-- javascript(node.js) Firebase, Auth 宣言-->
-  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script type="text/javascript" src="ProjectAuth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+  <script type="text/javascript" src="js/dbjs.js"></script>
 
   <script>
     $(document).ready(function(){
@@ -27,10 +27,12 @@
         event.preventDefault();
         }
     }, true);
+
+  var userInfo;
   </script>
 
   <meta charset="utf-8">
-  <link rel="stylesheet" href="timeSheet_style.css">
+  <link rel="stylesheet" href="css/timeSheet_style.css">
   <link rel="shortcut icon" href=""> <!-- remove favico.ico error -->
 
   <title>シフト履歴</title>
@@ -50,7 +52,7 @@
 
 <body>
 <!-- Loading-image -->
-<div id="loading"><img id="loading-image" src="/image/Loading.gif" alt="Loading..." /></div>
+<div id="loading"><img id="loading-image" src="/image/loading.gif" alt="Loading..." /></div>
 
 <div class="overlay">
   <header>
@@ -63,13 +65,13 @@
       <!-- ページ移動メニュー -->
       <nav class="headA">
         <ul>
-            <li><a href="#">出・退勤</a></li>
-            <li><a href="#">個人情報</a></li>
+            <li><a href="punch.php">出・退勤</a></li>
+            <li><a href="mMemInfo.html" target="_blank">個人情報</a></li>
             <!-- ログインした人の履歴に移動 -->
             <!-- <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li> -->
-            <li><a href="TimeSheet.php">履歴</a></li>
-            <li><a href="#">管理者</a></li>
-            <li><a href="#">ログアウト</a></li>
+            <li><a href="timeSheet.php">履歴</a></li>
+            <li><a href="admin.html" id="admin">管理者</a></li>
+            <li><a href="mLogin.html" id="login">ログイン</a></li>
         </ul>
       </nav>
     </div>
@@ -79,7 +81,7 @@
   <hr>
   <div class="timeSheet-form">
   <!-- Excel Export Form -->
-  <form action="ExcelExport.php" method="post">
+  <form action="excelExport.php" method="post">
   <!-- Ajax cssの為の基本HTML構造設定 -->
   <div class=buttons-container>
     <div class="select-form" id="SF">
@@ -142,7 +144,7 @@
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
           alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "index.php"; //Login画面
+          window.location.href = "log/login/mLogin.html"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合
@@ -164,7 +166,7 @@
         Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
         $.ajax({
             type: "POST", //データ送信形式
-            url: "TimeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
+            url: "timeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
             data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
                     "Attendances_monthly": Attendances_monthly
                    }, //urlに送る Parameter
@@ -181,7 +183,7 @@
       Users = data.val();
       $.ajax({
           type: "POST", //データ送信形式
-          url: "TimeSheetButton.php", //請求される場所 -> つまり、データを取る場所です
+          url: "timeSheetButton.php", //請求される場所 -> つまり、データを取る場所です
           data : {
                   "Users": Users
                  }, //urlに送る Parameter
@@ -198,7 +200,7 @@
       Attendances_daily = data.val();
         $.ajax({
           type: "POST", //データ送信形式
-          url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
+          url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
           data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
@@ -225,7 +227,7 @@
       Notevalue = Attendances_monthly[SelectYM]["attendances_memo"]; //Notevalue save
       $.ajax({
           type: "POST", //データ送信形式
-          url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
+          url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
           data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
@@ -248,7 +250,7 @@
       document.getElementById("modify").value = "修正終了";
       $.ajax({
         type: "POST", //データ送信形式
-        url: "TimeSheetModifyTable.php", //請求される場所 -> つまり、データを取る場所です
+        url: "timeSheetModifyTable.php", //請求される場所 -> つまり、データを取る場所です
         data : {"YearMonth": SelectYM, //選択した年月
                 "Attendances_daily": Attendances_daily,
                 "Notevalue": Notevalue
@@ -264,7 +266,7 @@
     document.getElementById("modify").value = "修正";
     $.ajax({
         type: "POST", //データ送信形式
-        url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
+        url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
         data : {"YearMonth": SelectYM, //選択した年月  -> JSON形式
                 "Attendances_daily": Attendances_daily,
                 "Notevalue": Notevalue

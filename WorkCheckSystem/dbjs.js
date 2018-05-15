@@ -13,8 +13,6 @@ var config = {
   messagingSenderId: "557330742678"
 };
 firebase.initializeApp(config);
-var auth, database, userInfo;
-var Attendances_monthlyRef, Attendances_dailyRef, UsersRef;
+var auth, database;
 database = firebase.database();
 auth = firebase.auth();
-var authProvider = new firebase.auth.GoogleAuthProvider(); //Google Authentication Various
