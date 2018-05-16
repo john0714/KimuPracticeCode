@@ -66,7 +66,6 @@ select {
 }
 
 input {
-  color: white;
   font-size: 1em;
   width: 2.8em;
 }
@@ -179,6 +178,7 @@ header .container-small {
 }
 
 .download-btn {
+  color: white;
   background-color: var(--light-btn-color);
   right: 0;
   margin-right: 8%;
@@ -187,6 +187,7 @@ header .container-small {
 }
 
 .modify-btn, .note-btn{
+  color: white;
   background-color: var(--light-btn-color);
   height: 40px;
   width: 100px;

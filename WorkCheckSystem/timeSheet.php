@@ -65,7 +65,7 @@
       </div>
       <!-- ページ移動メニュー -->
       <nav class="headA">
-        <ul>
+        <ul id="menu">
             <li><a href="#">出・退勤</a></li>
             <li><a href="#">個人情報</a></li>
             <!-- ログインした人の履歴に移動 -->
@@ -182,6 +182,12 @@
 
       UsersRef.on('value', function(data) {
       Users = data.val();
+      authority_id = Users.authority_id;
+      if(authority_id == 0) { //使用者の場合、メニューから管理者が見えないようにする
+        var lis = document.getElementsByTagName('li');
+        document.getElementById('menu').removeChild(lis[3]);
+      }
+
       $.ajax({
           type: "POST", //データ送信形式
           url: "TimeSheetButton.php", //請求される場所 -> つまり、データを取る場所です

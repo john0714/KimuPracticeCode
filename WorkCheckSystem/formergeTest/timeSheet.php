@@ -64,7 +64,7 @@
       </div>
       <!-- ページ移動メニュー -->
       <nav class="headA">
-        <ul>
+        <ul id="menu">
             <li><a href="punch.php">出・退勤</a></li>
             <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
             <li><a href="timeSheet.php">履歴</a></li>
@@ -179,6 +179,12 @@
 
       UsersRef.on('value', function(data) {
       Users = data.val();
+      authority_id = Users.authority_id;
+      if(authority_id == 0) { //使用者の場合、メニューから管理者が見えないようにする
+        var lis = document.getElementsByTagName('li');
+        document.getElementById('menu').removeChild(lis[3]);
+      }
+
       $.ajax({
           type: "POST", //データ送信形式
           url: "timeSheetButton.php", //請求される場所 -> つまり、データを取る場所です
