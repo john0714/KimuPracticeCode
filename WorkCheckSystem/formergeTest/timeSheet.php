@@ -66,12 +66,10 @@
       <nav class="headA">
         <ul>
             <li><a href="punch.php">出・退勤</a></li>
-            <li><a href="memberInfo/mMemInfo.html" target="_blank">個人情報</a></li>
-            <!-- ログインした人の履歴に移動 -->
-            <!-- <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li> -->
+            <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
             <li><a href="timeSheet.php">履歴</a></li>
-            <li><a href="admin.html" id="admin">管理者</a></li>
-            <li><a href="log/mLogin.html" id="login">ログイン</a></li> <!-- log/ == ./log/-->
+            <li><a href="./admin.php" id="admin">管理者</a></li>
+            <li><a href="log/mLogout.html" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
@@ -92,7 +90,7 @@
     </div>
     <div class="button-form" id="BF">
       <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/>
-      <input type=submit name="ExcelExport" class="download-btn" value="Excelダウン"></input>
+      <input type=submit name="ExcelExport" class="download-btn" value="DL"></input>
     </div>
   </div>
     <!-- Ajax table -->
@@ -313,7 +311,7 @@
               },
             });
           } else {
-            alert("修正に失敗しました 時間の形式で入力してください。");
+            alert("ログインしてください。");
           }
         }
         <?php

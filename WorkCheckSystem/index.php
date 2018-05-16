@@ -5,6 +5,7 @@
 	→ 管理者ページから移動する場合データ必要
 	jhkim
 -->
+
 <html>
 <head>
 
@@ -12,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <!-- javascript(node.js) Firebase 宣言-->
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-<script type="text/javascript" src="dbjs.js"></script>
+<script type="text/javascript" src="db.js"></script>
 
 <title>情報送信用ページ</title>
 </head>

@@ -12,7 +12,7 @@
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <!-- javascript(node.js) Firebase, Auth 宣言-->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script type="text/javascript" src="dbjs.js"></script>
+  <script type="text/javascript" src="db.js"></script>
 
   <script>
     $(document).ready(function(){
@@ -38,6 +38,7 @@
   <title>シフト履歴</title>
 
   <?php
+    // In My Computer, Turn off all error reporting in php.ini (display_errors)
     //selected YearMonth
     date_default_timezone_set('Asia/Tokyo'); //  default地域設定
     $monthlyDay = date("t"); //一か月の最終日
@@ -92,7 +93,7 @@
     </div>
     <div class="button-form" id="BF">
       <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/>
-      <input type=submit name="ExcelExport" class="download-btn" value="Excelダウン"></input>
+      <input type=submit name="ExcelExport" class="download-btn" value="DL"></input>
     </div>
   </div>
     <!-- Ajax table -->
@@ -313,7 +314,7 @@
               },
             });
           } else {
-            alert("修正に失敗しました 時間の形式で入力してください。");
+            alert("ログインしてください。");
           }
         }
         <?php
