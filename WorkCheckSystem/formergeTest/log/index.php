@@ -12,13 +12,13 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <!-- javascript(node.js) Firebase 宣言-->
 <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-<script type="text/javascript" src="../../js/dbjs.js"></script>
+<script type="text/javascript" src="../js/db.js"></script>
 
 <title>情報送信用ページ</title>
 </head>
 <body>
 	<div class="社員のメニュー">
-		<form action="../../timeSheet.php" name="GetValue" method="get">
+		<form action="../timeSheet.php" name="GetValue" method="get">
 			<input type=submit style='font-size:16pt' value="シフト履歴にデータ送信"/>
 			<!-- <input type=textarea name="Attendances_monthly" style='font-size:16pt'/>
 			<input type=textarea name="Attendances_daily" style='font-size:16pt'/>
@@ -27,6 +27,7 @@
 		</form>
 	</div>
 			<script>
+			var auth, database;
 			var userInfo;
 			var authProvider = new firebase.auth.GoogleAuthProvider(); //Google Authentication Various
 			//auth.createUserWithEmailAndPassword("john0712@naver.com", "123456") //ただのID, PW生成(メールとPW)

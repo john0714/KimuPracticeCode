@@ -12,7 +12,7 @@
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <!-- javascript(node.js) Firebase, Auth 宣言-->
   <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-  <script type="text/javascript" src="js/dbjs.js"></script>
+  <script type="text/javascript" src="js/db.js"></script>
 
   <script>
     $(document).ready(function(){
@@ -27,7 +27,7 @@
         event.preventDefault();
         }
     }, true);
-
+  var auth, database;
   var userInfo;
   </script>
 
@@ -52,7 +52,7 @@
 
 <body>
 <!-- Loading-image -->
-<div id="loading"><img id="loading-image" src="/image/loading.gif" alt="Loading..." /></div>
+<div id="loading"><img id="loading-image" src="image/Loading.gif" alt="Loading..." /></div>
 
 <div class="overlay">
   <header>
@@ -66,12 +66,12 @@
       <nav class="headA">
         <ul>
             <li><a href="punch.php">出・退勤</a></li>
-            <li><a href="mMemInfo.html" target="_blank">個人情報</a></li>
+            <li><a href="memberInfo/mMemInfo.html" target="_blank">個人情報</a></li>
             <!-- ログインした人の履歴に移動 -->
             <!-- <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li> -->
             <li><a href="timeSheet.php">履歴</a></li>
             <li><a href="admin.html" id="admin">管理者</a></li>
-            <li><a href="mLogin.html" id="login">ログイン</a></li>
+            <li><a href="log/mLogin.html" id="login">ログイン</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
@@ -144,7 +144,7 @@
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
           alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "log/login/mLogin.html"; //Login画面(Test:index.php)
+          window.location.href = "log/mLogin.html"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合
