@@ -2,9 +2,7 @@
 
   練習したコードです。
   
-  めちゃくちゃなコードなので恥ずかしいですね・・・。
-  
-  誰かが見たら参考だけしてください。
+  下手なコードなので参考だけにしてください。
 
   BookProgram : SpringFrameWork(JSP,Servlet)でやった本管理Web Applicationです。(Javaのコードはsrcfフォルダの中に入っています。)
  
