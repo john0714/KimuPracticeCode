@@ -219,16 +219,16 @@ print(df.groupby("grade").size())  # 갯수 출력
 # 11.Plotting(그래프!)
 ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))  # 랜덤값 1000개, 범위 1000개 만들어서 넣음
 ts = ts.cumsum()  # 이전 열의 수와 현재 열의 수를 더해서 계속 값 입력(cumsum())
-# ts.plot()  # 그래프 형태로 plt에 입력
-# plt.show()  # 그래프를 보여줌
+ts.plot()  # 그래프 형태로 plt에 입력
+plt.show()  # 그래프를 보여줌
 
 df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index,
                   columns=['A', 'B', 'C', 'D'])
 df = df.cumsum()
-plt.figure();
-df.plot();
+plt.figure()
+df.plot()
 plt.legend(loc='best')
-# plt.show()  # 그래프를 보여줌
+#plt.show()  # 그래프를 보여줌
 
 # 12.Getting Data In/Out
 df.to_csv('foo.csv')  # Writing to a csv file

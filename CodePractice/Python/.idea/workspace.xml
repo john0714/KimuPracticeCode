@@ -9,13 +9,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Python" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Running_10minute.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="349">
+              <caret line="242" column="28" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
               <folding>
                 <element signature="e#192#238#0" expanded="true" />
               </folding>
@@ -23,13 +26,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WritingCountProgram.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py">
+      <file leaf-file-name="Graphmatplotlib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="108">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordCloud.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindDatas.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+              <folding>
+                <element signature="e#4#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,6 +78,21 @@
       <find>얘는무엇일까요</find>
       <find>ㅇㅇ</find>
       <find>초보</find>
+      <find>Act</find>
+      <find>jpype</find>
+      <find>t</find>
+      <find>STOPWORDS</find>
+      <find>명지</find>
+      <find>KC</find>
+      <find>구릉지</find>
+      <find>Pagecount</find>
+      <find>alice_mask</find>
+      <find>tokens_ko</find>
+      <find>MeCab</find>
+      <find>NoneType</find>
+      <find>get_text</find>
+      <find>body</find>
+      <find>形容詞</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -94,16 +136,21 @@
         <option value="$PROJECT_DIR$/Pandas/Obejct_Creation.py" />
         <option value="$PROJECT_DIR$/Pandas/DataAnalysisPractice.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice.py" />
-        <option value="$PROJECT_DIR$/Pandas/Running_10minute.py" />
         <option value="$PROJECT_DIR$/WritingCountProgram.py" />
+        <option value="$PROJECT_DIR$/basic/ClassUse.py" />
+        <option value="$PROJECT_DIR$/Pandas/Running_10minute.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WorkCloud.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="400" />
+    <option name="x" value="208" />
     <option name="y" value="23" />
-    <option name="width" value="1040" />
+    <option name="width" value="1229" />
     <option name="height" value="810" />
   </component>
   <component name="ProjectView">
@@ -111,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,10 +170,16 @@
               <item name="Python" type="462c0819:PsiDirectoryNode" />
               <item name="DataAnalysisPractice" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="Pandas" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,7 +215,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.WritingCountProgram">
+  <component name="RunManager" selected="Python.WordCloud">
+    <configuration name="ClassUse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic/ClassUse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="DataAnalysisPractice" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,42 +247,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WritingCountProgram.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="MultiplyCal" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MultiplyCal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="PackageManager" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PackageManager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,6 +270,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="WordCloud" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataAnalysisPractice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="WritingCountProgram" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,26 +300,26 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.MultiplyCal" />
-      <item itemvalue="Python.PackageManager" />
       <item itemvalue="Python.Running_10minute" />
       <item itemvalue="Python.DataAnalysisPractice" />
       <item itemvalue="Python.WritingCountProgram" />
+      <item itemvalue="Python.ClassUse" />
+      <item itemvalue="Python.WordCloud" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.WordCloud" />
         <item itemvalue="Python.WritingCountProgram" />
-        <item itemvalue="Python.DataAnalysisPractice" />
         <item itemvalue="Python.Running_10minute" />
-        <item itemvalue="Python.PackageManager" />
-        <item itemvalue="Python.MultiplyCal" />
+        <item itemvalue="Python.ClassUse" />
+        <item itemvalue="Python.DataAnalysisPractice" />
       </list>
     </recent_temporary>
   </component>
@@ -285,19 +337,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="400" y="23" width="1040" height="810" extended-state="0" />
+    <frame x="208" y="23" width="1229" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23653845" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.20016274" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013624" side_tool="true" weight="0.32212886" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49863762" visible="true" weight="0.30027175" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32880434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3980978" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5009709" side_tool="true" weight="0.28538284" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -316,10 +368,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/auth.py" />
-    <entry file="file://$PROJECT_DIR$/Module.py" />
-    <entry file="file://$PROJECT_DIR$/Comment.py" />
-    <entry file="file://$PROJECT_DIR$/Container.py" />
     <entry file="file://$PROJECT_DIR$/Comment.py" />
     <entry file="file://$PROJECT_DIR$/Python-var_Practice.py" />
     <entry file="file://$PROJECT_DIR$/HangMan.py" />
@@ -392,32 +440,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WritingCountProgram.py">
+    <entry file="file://$PROJECT_DIR$/WritingCountProgram.py" />
+    <entry file="file://$PROJECT_DIR$/basic/ClassUse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="349">
+          <caret line="242" column="28" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
           <folding>
             <element signature="e#192#238#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/konlpy/tag/_hannanum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#4#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
