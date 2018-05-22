@@ -66,19 +66,21 @@
       <!-- ページ移動メニュー -->
       <nav class="headA">
         <ul id="menu">
-            <li><a href="#">出・退勤</a></li>
-            <li><a href="#">個人情報</a></li>
-            <!-- ログインした人の履歴に移動 -->
-            <!-- <li><a href="javascript:void(0)" onclick=" location.href = 'TimeSheet.php?AuthUser=' + userInfo; return false; ">履歴</a></li> -->
-            <li><a href="TimeSheet.php">履歴</a></li>
-            <li><a href="#">管理者</a></li>
-            <li><a href="#">ログアウト</a></li>
+            <li><a href="punch.php">出・退勤</a></li>
+            <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
+            <li><a href="timeSheet.php">履歴</a></li>
+            <li><a href="./admin.php" id="admin">管理者</a></li>
+            <li><a href="log/mLogout.html" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
   </header>
 </div>
-  <b>シフト履歴</b>
+
+<div class="timeSheet-all">
+  <div class="timeSheet-top">
+    <b>シフト履歴</b>
+  </div>
   <hr>
   <div class="timeSheet-form">
   <!-- Excel Export Form -->
@@ -98,6 +100,7 @@
   </div>
     <!-- Ajax table -->
     <!-- 以下のテーブルの内容(Attendances_dailyだけ)は現在の運営には特にいらないが、開発した時のテスト用テーブルなので残します -->
+    <div class="timeSheet-body">
     <table id="refresh">
       <tr>
         <th class="small-cell">日</th>
@@ -125,8 +128,10 @@
         <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
     </table>
-    </form>
+    </div>
+  </form>
   </div>
+</div>
 
   <script>
   var Attendances_dailyRef = "";
