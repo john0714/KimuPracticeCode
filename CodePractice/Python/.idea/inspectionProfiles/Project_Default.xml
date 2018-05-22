@@ -5,6 +5,9 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="FindDatas" />
+          <option value="FindNickNameDatas" />
+          <option value="FindWritingDates" />
+          <option value="FindWritingDatas" />
         </list>
       </option>
     </inspection_tool>

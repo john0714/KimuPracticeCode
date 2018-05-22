@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-import FindDatas
+import FindNickNameDatas
 
 
 # /Library/Fonts에 폰트 다운받고 User/user01/FontList.json에 직접 경로 설정해서 폰트 추가함
@@ -22,9 +22,10 @@ mpl.rcParams.update({'font.size': 7}) # 폰트 사이즈 변경
 
 MaxPage = input("1페이지부터 찾을 페이지 수 : ")  # Input Data
 
-FindData = FindDatas.FD(MaxPage)  # Export Array(use requests)
-Datas = FindData.InsertData()  # 함수를 사용해서 dict데이터를 가져옴
+FindData = FindNickNameDatas.FD(MaxPage)  # Export Array(use requests)
+Datas = FindData.GetData()  # 함수를 사용해서 dict데이터를 가져옴
 Dindex = []
+print(Datas)  # 정렬 없이, 중복체크만 한 dict형태
 
 Dataspd = pd.Series(Datas)
 

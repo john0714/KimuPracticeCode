@@ -17,7 +17,7 @@
       <file leaf-file-name="Running_10minute.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
+            <state relative-caret-position="363">
               <caret line="242" column="28" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
               <folding>
                 <element signature="e#192#238#0" expanded="true" />
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Graphmatplotlib.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Graphmatplotlib.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="168">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordCloud.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py">
+      <file leaf-file-name="WordCloudCharacter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+            <state relative-caret-position="-542">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -50,16 +50,9 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FindDatas.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-              <folding>
-                <element signature="e#4#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="FindWritingDatas.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -73,15 +66,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>memeber</find>
       <find>중복</find>
       <find>얘는무엇일까요</find>
       <find>ㅇㅇ</find>
       <find>초보</find>
       <find>Act</find>
       <find>jpype</find>
-      <find>t</find>
-      <find>STOPWORDS</find>
       <find>명지</find>
       <find>KC</find>
       <find>구릉지</find>
@@ -93,6 +83,19 @@
       <find>get_text</find>
       <find>body</find>
       <find>形容詞</find>
+      <find>random</find>
+      <find>kolaw</find>
+      <find>STOPWORDS</find>
+      <find>t</find>
+      <find>社</find>
+      <find>運営</find>
+      <find>杏</find>
+      <find>finddata</find>
+      <find>if</find>
+      <find>mecab_analysis</find>
+      <find>grey_color_func</find>
+      <find>rq</find>
+      <find>nltk</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -139,18 +142,22 @@
         <option value="$PROJECT_DIR$/WritingCountProgram.py" />
         <option value="$PROJECT_DIR$/basic/ClassUse.py" />
         <option value="$PROJECT_DIR$/Pandas/Running_10minute.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WorkCloud.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
+    <option name="x" value="199" />
     <option name="y" value="23" />
-    <option name="width" value="1229" />
+    <option name="width" value="1237" />
     <option name="height" value="810" />
   </component>
   <component name="ProjectView">
@@ -158,6 +165,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +187,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,10 +203,11 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DataAnalysisPractice" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -215,43 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.WordCloud">
-    <configuration name="ClassUse" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic/ClassUse.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="DataAnalysisPractice" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pandas" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WritingCountProgram.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.WordCloudCharacter">
     <configuration name="Running_10minute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,7 +254,43 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="WordCloudCharacter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataAnalysisPractice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="WordCloudGallery" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DataAnalysisPractice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,18 +316,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.Running_10minute" />
-      <item itemvalue="Python.DataAnalysisPractice" />
       <item itemvalue="Python.WritingCountProgram" />
-      <item itemvalue="Python.ClassUse" />
       <item itemvalue="Python.WordCloud" />
+      <item itemvalue="Python.WordCloudCharacter" />
+      <item itemvalue="Python.WordCloudGallery" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.WordCloud" />
+        <item itemvalue="Python.WordCloudCharacter" />
+        <item itemvalue="Python.WordCloudGallery" />
         <item itemvalue="Python.WritingCountProgram" />
+        <item itemvalue="Python.WordCloud" />
         <item itemvalue="Python.Running_10minute" />
-        <item itemvalue="Python.ClassUse" />
-        <item itemvalue="Python.DataAnalysisPractice" />
       </list>
     </recent_temporary>
   </component>
@@ -337,13 +345,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="23" width="1229" height="810" extended-state="0" />
+    <frame x="199" y="23" width="1237" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.20016274" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.19886823" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013624" side_tool="true" weight="0.32212886" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49863762" visible="true" weight="0.30027175" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49863762" visible="true" weight="0.30027175" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -364,14 +372,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataAnalysisPractice/FindNickNameDatas.py</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Comment.py" />
-    <entry file="file://$PROJECT_DIR$/Python-var_Practice.py" />
-    <entry file="file://$PROJECT_DIR$/HangMan.py" />
-    <entry file="file://$PROJECT_DIR$/Python-Compare_Practice.py" />
     <entry file="file://$PROJECT_DIR$/StackPractice.py" />
     <entry file="file://$PROJECT_DIR$/QueuePractice.py" />
     <entry file="file://$PROJECT_DIR$/Python-InputOutput_Practice.py" />
@@ -448,16 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="242" column="28" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
-          <folding>
-            <element signature="e#192#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/konlpy/tag/_hannanum.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -465,32 +465,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py">
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/ovalsave.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="363">
+          <caret line="242" column="28" selection-start-line="242" selection-start-column="28" selection-end-line="242" selection-end-column="28" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#192#238#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py">
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindNickNameDatas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding>
-            <element signature="e#4#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py">
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+        <state relative-caret-position="61">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1714">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-542">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
