@@ -9,6 +9,10 @@
   --light-btn-color: #3f6ac1;
 }
 
+* {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+}
+
 /* Loading div */
 #loading {
   width: 100%;
@@ -186,14 +190,14 @@ header .container-small {
 
 .search-btn {
   background-color: var(--text-color);
-  height: 30px;
+  height: 34px;
   width: 82px;
 }
 
 .download-btn, .modify-btn{
   color: white;
   background-color: var(--light-btn-color);
-  height: 30px;
+  height: 34px;
   width: 82px;
 }
 

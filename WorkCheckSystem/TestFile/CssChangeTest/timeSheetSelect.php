@@ -7,7 +7,6 @@
   $YMs = $_POST["Attendances_monthly"]; //配列送信
   $selectYM = $_POST["YearMonth"];
 ?>
-<div class="select-form" id="SF">
       <select name="YearMonth" id="YearMonth">
         <?php //print Year and Month
         foreach($YMs as $key=>$value) {
@@ -19,4 +18,3 @@
         } ?>
       </select>
       <button type="button" name="search" id="search" class="search-btn">検索</button>
-</div>

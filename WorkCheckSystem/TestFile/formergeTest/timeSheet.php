@@ -66,10 +66,10 @@
       <nav class="headA">
         <ul id="menu">
             <li><a href="punch.php">出・退勤</a></li>
-            <li><a href="memberInfo/mMemInfo.php">個人情報</a></li>
+            <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
             <li><a href="timeSheet.php">履歴</a></li>
             <li><a href="./admin.php" id="admin">管理者</a></li>
-            <li><a href="log/mLogout.php" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
+            <li><a href="log/mLogout.html" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
@@ -123,7 +123,7 @@
       <tr class="memo-cell">
         <th colspan="2">備考</th>
         <td colspan="4"><textarea name="note" id="note" rows="8" cols="80"></textarea></td>
-        <td><input type=button value="備考セーブ" onclick='SaveNote();' class="note-btn"></input></td>
+        <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
     </table>
   </form>
@@ -146,8 +146,8 @@
           userInfo = user.uid;
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
-          alert("ログインしてください。");
-          window.location.href = "log/mLogin.php"; //Login画面(Test:index.php)
+          alert("正しい接近ではありません! 初期画面に移動します!");
+          window.location.href = "log/mLogin.html"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合
@@ -163,19 +163,13 @@
       SelectYM = <?=$year.$month?>; //SelectYM Save
       Notevalue = "";
 
-      /*
-         180522
-         jhkim
-
-         Firebase on, once Diffrence Practice
-         note error solution
-      */
+      /* Firebase on, once Diffrence Practice */
       Attendances_monthlyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
           Attendances_monthly = data.val();
       })
 
       /* Pageloading start */
-      Attendances_monthlyRef.once('value', function(data){  //onceで一度だけデータを呼ぶ
+      Attendances_monthlyRef.once('value', function(data){
         Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
         $.ajax({
             type: "POST", //データ送信形式
@@ -215,8 +209,12 @@
         })
       })
 
-      Attendances_dailyRef.on('value', function(data){
-      Attendances_daily = data.val();
+      /* Firebase on, once Diffrence Practice */
+      Attendances_dailyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
+          Attendances_daily = data.val();
+      })
+
+      Attendances_dailyRef.once('value', function(data){
         $.ajax({
           type: "POST", //データ送信形式
           url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
@@ -332,7 +330,7 @@
               },
             });
           } else {
-            alert("修正時間の形が間違いました。再び書いてください。");
+            alert("ログインしてください。");
           }
         }
         <?php
@@ -342,12 +340,12 @@
 
     /* Note Value Save */
     function SaveNote() {
-      Attendances_monthlyRef.child(SelectYM).once("value", function(snap){ //一度だけデータを呼び出す
+      Attendances_monthlyRef.child(SelectYM).once("value", function(snap){ //一つのデータだけに入れる
         snap.ref.update({
             attendances_memo: $("textarea").val()
-          })
         })
-      alert("備考セーブ完了");
+      })
+      alert("セーブ完了");
     }
   </script>
 </body>

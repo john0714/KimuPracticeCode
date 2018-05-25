@@ -49,15 +49,20 @@ $workarray = array();
           $OTCal = (substr($ET, 0, 2)*60+substr($ET, 3, 5))
                    - (substr($ST, 0, 2)*60+substr($ST, 3, 5))
                    - (substr($RT, 0, 1)*60+substr($RT, 2, 4)) - 480;
-          if(($OTCal/60) < 0) {
-            $OTT = ceil($OTCal/60);
-          } else{
-            $OTT = floor($OTCal/60);
+          if($OTCal <= 0) {
+            $OT = "";
+            break;
+          } else {
+            if(($OTCal/60) < 0) {
+              $OTT = ceil($OTCal/60);
+            } else{
+              $OTT = floor($OTCal/60);
+            }
+            if($OTT == -0) $OTT = 0;  //-0 -> 0
+            $OTM = $OTCal%60;
+            $OT = $OTT.'時間 '.$OTM.'分';//残業時間
+            break;
           }
-          if($OTT == -0) $OTT = 0;  //-0 -> 0
-          $OTM = $OTCal%60;
-          $OT = $OTT.'時間 '.$OTM.'分';//残業時間
-          break;
         } else {
           $Daycheck = false;
         }

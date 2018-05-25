@@ -3,7 +3,6 @@
 <!--
   180508
   シフト画面(ログインしたユーザー用)
-  Html/css：ユンへリン
   機能構築：jhkim
 -->
 <head>
@@ -67,10 +66,10 @@
       <nav class="headA">
         <ul id="menu">
             <li><a href="punch.php">出・退勤</a></li>
-            <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
+            <li><a href="memberInfo/mMemInfo.php">個人情報</a></li>
             <li><a href="timeSheet.php">履歴</a></li>
             <li><a href="./admin.php" id="admin">管理者</a></li>
-            <li><a href="log/mLogout.html" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
+            <li><a href="log/mLogout.php" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
@@ -149,8 +148,8 @@
           userInfo = user.uid;
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
-          alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "mLogin.html"; //Login画面(Test:index.php)
+          alert("ログインしてください。");
+          window.location.href = "mLogin.php"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合
@@ -166,8 +165,13 @@
       SelectYM = <?=$year.$month?>; //SelectYM Save
       Notevalue = "";
 
+      /* Firebase on, once Diffrence Practice */
+      Attendances_monthlyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
+          Attendances_monthly = data.val();
+      })
+
       /* Pageloading start */
-      Attendances_monthlyRef.on('value', function(data){
+      Attendances_monthlyRef.once('value', function(data){
         Attendances_monthly = data.val();
         Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
         $.ajax({
@@ -208,8 +212,12 @@
         })
       })
 
-      Attendances_dailyRef.on('value', function(data){
-      Attendances_daily = data.val();
+      /* Firebase on, once Diffrence Practice */
+      Attendances_dailyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
+          Attendances_daily = data.val();
+      })
+
+      Attendances_dailyRef.once('value', function(data){
         $.ajax({
           type: "POST", //データ送信形式
           url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
@@ -325,7 +333,7 @@
               },
             });
           } else {
-            alert("ログインしてください。");
+            alert("修正時間の形が間違いました。再び書いてください。");
           }
         }
         <?php
@@ -340,7 +348,7 @@
             attendances_memo: $("textarea").val()
         })
       })
-      alert("セーブ完了");
+      alert("備考セーブ完了");
     }
   </script>
 </body>
