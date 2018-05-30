@@ -40,4 +40,4 @@ class FD(object):
             Pagecount += 1
 
         print("페이지를 구성 중 입니다...")
-        return overloadText  # Text반환
+        return overloadText  # return string type

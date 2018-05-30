@@ -45,4 +45,4 @@ class FD(object):
 
         # NickNameList = list(set(NickNameList))  # List일 경우 중복제거
         # Sorteddict = sorted(NickNamedict.items(), key=op.itemgetter(0), reverse=True)  # dict형태의 NickNamedict를 Sort하면 list안의 tuple의 형태로 변함(순위 출력용)
-        return NickNamedict  # dict반환
+        return NickNamedict  # return dict type

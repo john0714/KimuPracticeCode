@@ -21,7 +21,7 @@ else:
     print('Unknown system... sorry')
 
 
-# 杏
+
 def mecab_analysis(text):
     jt = MeCab.Tagger('-Ochasen')
     node = jt.parseToNode(text)
@@ -36,7 +36,7 @@ def mecab_analysis(text):
             break
     return output
 
-
+# 杏
 URL = 'http://dic.nicovideo.jp/a/%E5%8F%8C%E8%91%89%E6%9D%8F'  # 주소
 user_agent = "anzu"
 overloadText = ""
@@ -74,7 +74,6 @@ plt.show()
 
 """
 # エスティニアン, RedWarrior
-# Use Korean
 text = open('WordCloudData/estiniann.txt').read()  # 출력 연습용 대한민국 헌법
 a_coloring = np.array(Image.open("WordCloudData/redwarrior.jpg"))
 
@@ -88,5 +87,23 @@ plt.figure(figsize=(20,15))
 plt.imshow(wc.recolor(color_func=image_colors), interpolation='bilinear')
 plt.axis("off")  # 그래프 눈금표 안보이도록 제거
 plt.savefig('FF14.png')  # 파일 세이브
+plt.show()
+"""
+
+"""
+# ふれ
+text = open('WordCloudData/a_new_hope.txt').read()  # 출력 연습용 대한민국 헌법
+a_coloring = np.array(Image.open("WordCloudData/hure.jpg"))
+
+wordcloud = WordCloud(background_color="white", max_words=2000, mask=a_coloring)
+
+# generate word cloud
+wc = wordcloud.generate(text)
+image_colors = ImageColorGenerator(a_coloring)  # image_colors 반영
+
+plt.figure(figsize=(20,15))
+plt.imshow(wc.recolor(color_func=image_colors), interpolation='bilinear')
+plt.axis("off")  # 그래프 눈금표 안보이도록 제거
+plt.savefig('hure.png')  # 파일 세이브
 plt.show()
 """
