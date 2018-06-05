@@ -1,5 +1,7 @@
 package question;
 
+//1000자리 숫자 안에서 이어지는 5자리 숫자의 곱 중 최대값은?
+
 public class Problem8 {
 	public static void main(String args[]) {
 		

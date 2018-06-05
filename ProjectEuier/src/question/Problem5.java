@@ -1,5 +1,7 @@
 package question;
 
+// 1 ~ 20 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수
+
 public class Problem5 {
 	public static void main(String args[]) {
 		int i = 0;

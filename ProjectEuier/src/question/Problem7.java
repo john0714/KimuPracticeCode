@@ -1,5 +1,7 @@
 package question;
 
+//10001번째의 소수
+
 public class Problem7 {
 	public static void main(String args[]) {
 		int primenumbercount = 0;

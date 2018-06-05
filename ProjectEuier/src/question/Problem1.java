@@ -1,7 +1,8 @@
 package question;
 
-// 원래 컴퓨터는 계산기를 대용하기 위해 만든 물건이었다.
 // 프로그래밍의 기본은 알고리즘. 알고리즘 문제도 풀면서 기본공부 하도록 하자
+// 1000보다 작은 자연수 중에서 3 또는 5의 배수를 모두 더하면 얼마일까요?
+
 public class Problem1 {
 	public static void main(String args[]) {
 		int result = 0;

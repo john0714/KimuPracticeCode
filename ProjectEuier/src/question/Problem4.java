@@ -1,5 +1,8 @@
 package question;
 
+//89098같이 좌우 모습이 같은 수를 대칭수 라고 합니다.
+//세자리 수를 곱해 만들 수 있는 가장 큰 대칭수는?
+
 public class Problem4 {
 	public static void main(String args[]) {
 		int num1 = 900;

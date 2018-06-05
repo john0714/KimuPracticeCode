@@ -1,5 +1,7 @@
 package question;
 
+//1부터 100까지 "제곱의 합"과 "합의 제곱"의 차는?
+
 public class Problem6 {
 	public static void main(String args[]) {
 		int squareadd = 0;

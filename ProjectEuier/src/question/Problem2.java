@@ -1,5 +1,7 @@
 package question;
 
+// 피보나치 수열에서 4백만 이하이면서 짝수인 항의 합
+
 public class Problem2 {
 	public static void main(String args[]) {
 		int slot1 = 1;
