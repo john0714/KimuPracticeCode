@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-    </head>
-    <body>
-        <?php
+<?php
         /*
           180501
           Excel出力(勤務表)
           jhkim
         */
+        date_default_timezone_set('Asia/Tokyo'); //  default地域設定
 
         /* $_POSTで値を持つ */
         $UserData = json_decode($_POST["Users"], true); //User Data
@@ -80,7 +76,4 @@
         }
         return $correctTime;
       }
-
-      ?>
-    </body>
-  </html>
+?>

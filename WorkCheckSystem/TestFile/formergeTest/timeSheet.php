@@ -32,6 +32,8 @@
   </script>
 
   <meta charset="utf-8">
+  <!-- 180612 device automatic resize width -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
   <link rel="stylesheet" href="css/timeSheet_style.css">
   <link rel="shortcut icon" href=""> <!-- remove favico.ico error -->
 
@@ -66,10 +68,10 @@
       <nav class="headA">
         <ul id="menu">
             <li><a href="punch.php">出・退勤</a></li>
-            <li><a href="memberInfo/mMemInfo.html">個人情報</a></li>
+            <li><a href="memberInfo/mMemInfo.php">個人情報</a></li>
             <li><a href="timeSheet.php">履歴</a></li>
             <li><a href="./admin.php" id="admin">管理者</a></li>
-            <li><a href="log/mLogout.html" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
+            <li><a href="log/mLogout.php" id="login">ログアウト</a></li> <!-- log/ == ./log/-->
         </ul>
       </nav>
     </div>
@@ -93,12 +95,13 @@
         <button type="button" name="search" id="search" class="search-btn">検索</button>
     </div>
     <div class="button-form" id="BF">
-      <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/>
+      <!-- <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/> -->
       <input type=submit name="ExcelExport" class="download-btn" value="DL"></input>
     </div>
   </div>
     <!-- Ajax table -->
     <!-- 以下のテーブルの内容(Attendances_dailyだけ)は現在の運営には特にいらないが、開発した時のテスト用テーブルなので残します -->
+    <div class="timeSheet-body">
     <table id="refresh">
       <tr>
         <th class="small-cell">日</th>
@@ -109,23 +112,25 @@
         <th>休憩</th>
         <th>残業</th>
       </tr>
-      <tr>
-        <td>ロ</td>
-        <td>ー</td>
-        <td>ディ</td>
-        <td>ン</td>
-        <td>グ</td>
-        <td>中</td>
-        <td>…</td>
-      </tr>
+      <!-- <tr>
+        <td></td>
+        <td></td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td></td>
+      </tr> -->
       <input type=hidden name="workdata" value=<?=json_encode($workarray) ?>></input>
       <input type=hidden name="YM" value=<?=$year.$month ?>></input>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
-        <td colspan="4"><textarea name="note" id="note" rows="8" cols="80"></textarea></td>
+        <!-- 180612 textArea width auto -->
+        <td colspan="4"><textarea style="width:100%;" name="note" id="note" rows="8" cols="80"></textarea></td>
         <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
     </table>
+    </div>
   </form>
   </div>
 </div>
@@ -136,6 +141,7 @@
   var UsersRef = "";
   var SelectYM = "";
   var Notevalue = "";
+  var date = ""; // 180611 修正
 
   // Firebase Lodaing....
   $(window).load(function() {
@@ -147,7 +153,7 @@
           Pageloading();
         } else { //Authentication No user is signed in. → need Authentication
           alert("正しい接近ではありません! 初期画面に移動します!");
-          window.location.href = "log/mLogin.html"; //Login画面(Test:index.php)
+          window.location.href = "log/mLogin.php"; //Login画面(Test:index.php)
         }
       })
     <?php } else { ?> //管理者画面から入った場合
@@ -161,7 +167,6 @@
       Attendances_monthlyRef = database.ref('Attendances_monthly/' + userInfo );
       UsersRef = database.ref('Users/' + userInfo );
       SelectYM = <?=$year.$month?>; //SelectYM Save
-      Notevalue = "";
 
       /* Firebase on, once Diffrence Practice */
       Attendances_monthlyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
@@ -170,11 +175,17 @@
 
       /* Pageloading start */
       Attendances_monthlyRef.once('value', function(data){
-        Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
+        //180611 attendances_memo null Exception(最新のデータがない場合の例外)
+        if(Attendances_monthly[<?=$year.$month?>] != null) {
+          date = <?=$year.$month?>
+        } else {
+          date = <?=$year.$month-1?>;
+        }
+        Notevalue = Attendances_monthly[date]["attendances_memo"]; //Notevalue save
         $.ajax({
             type: "POST", //データ送信形式
             url: "timeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
-            data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+            data : {"YearMonth": date, //洗濯した年月 -> JSON形式 (180611 dateに修正)
                     "Attendances_monthly": Attendances_monthly
                    }, //urlに送る Parameter
             success: function(datas){
@@ -218,7 +229,7 @@
         $.ajax({
           type: "POST", //データ送信形式
           url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
-          data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+          data : {"YearMonth": date, //洗濯した年月 -> JSON形式 (180611 dateに修正)
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
                  }, //urlに送る Parameter
@@ -241,11 +252,13 @@
         document.getElementById("modify").value = "修正";
       }
       SelectYM = document.getElementById("YearMonth").value; //SelectYM Save
+      SelectYM = SelectYM.replace(/年/gi, "");
+      SelectYM = SelectYM.replace(/月/gi, ""); //SelectYM Save, 180605年月修正に従ってコード修正
       Notevalue = Attendances_monthly[SelectYM]["attendances_memo"]; //Notevalue save
       $.ajax({
           type: "POST", //データ送信形式
           url: "timeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
-          data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
+          data : {"YearMonth": SelectYM, //洗濯した年月 -> JSON形式
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
                  }, //urlに送る Parameter
@@ -330,7 +343,7 @@
               },
             });
           } else {
-            alert("ログインしてください。");
+            alert("修正時間の形が間違いました。再び書いてください。");
           }
         }
         <?php
@@ -345,7 +358,7 @@
             attendances_memo: $("textarea").val()
         })
       })
-      alert("セーブ完了");
+      alert("備考セーブ完了");
     }
   </script>
 </body>

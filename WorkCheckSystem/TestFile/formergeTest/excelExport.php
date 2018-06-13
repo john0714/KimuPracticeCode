@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-    </head>
-    <body>
-        <?php
+<?php
         /*
           180501
           Excel出力(勤務表)
@@ -11,6 +6,7 @@
         */
 
         /* $_POSTで値を持つ */
+        date_default_timezone_set('Asia/Tokyo'); //  default地域設定
         $UserData = json_decode($_POST["Users"], true); //User Data
         $workdata = json_decode($_POST['workdata'] ,true); //User Dayly Data
         $YMs = $_POST['YM']; //TimeSheet Selected Year and Month
@@ -80,7 +76,4 @@
         }
         return $correctTime;
       }
-
-      ?>
-    </body>
-  </html>
+?>

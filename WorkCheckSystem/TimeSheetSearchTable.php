@@ -4,7 +4,12 @@
   POSTデータを呼び出してテーブルを更新(検索)します
   jhkim1
 */
-$Days = $_POST["Attendances_daily"]; //Database Days Data
+date_default_timezone_set('Asia/Tokyo'); //  default地域設定
+if(empty($_POST["Attendances_daily"])) {   // データがない時foreachのエラーメッセージが見えないようにする 180601
+  $Days = array();
+} else {
+  $Days = $_POST["Attendances_daily"]; //Database Days Data
+}
 $SelectYear = substr($_POST["YearMonth"], 0, 4);
 $SelectMonth = substr($_POST["YearMonth"], 4, 6);
 $note = $_POST["Notevalue"];
@@ -98,7 +103,8 @@ $workarray = array();
       <tr class="memo-cell">
         <!-- colspan = cols weight -->
         <th colspan="2">備考</th>
-        <td colspan="4"><textarea name="note" rows="8" cols="80"><?=$note?></textarea></td>
+        <!-- 180612 textArea width auto -->
+        <td colspan="4"><textarea style="width:100%;" name="note" rows="8" cols="80"><?=$note?></textarea></td>
         <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
 

@@ -25,6 +25,7 @@ SECRET_KEY = '7ki16nk1kic*qi-e*i^_37+503n-ozlmtt!n-koor(ho5)m41x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# allowed 0.0.0.0
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls.apps.PollsConfig',  # 이제 Django는 polls app이 포함된 것을 알게됨
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  #Django는 기본 데이터베이스로 SQLite를 사용하며, SQLite의 기본 데이터들은 내 컴퓨터에 그냥 저장됨(.sqlite3파일)
     }
 }
 
@@ -103,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 

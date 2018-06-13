@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import random
 import platform
 import nltk  # Natural Language(자연어) tool kit(도구 모음)
-import FindNickNameDatas
 import FindWritingDatas
 from PIL import Image
 from matplotlib import font_manager, rc

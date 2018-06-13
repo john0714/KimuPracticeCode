@@ -3,7 +3,6 @@ import requests as rq
 import matplotlib.pyplot as plt
 import random
 import platform
-import FindDatas
 import MeCab
 from PIL import Image
 from matplotlib import font_manager, rc

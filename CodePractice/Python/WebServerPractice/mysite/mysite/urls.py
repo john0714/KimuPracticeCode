@@ -19,6 +19,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),  # polls.urls 모듈을 바라보게 설정
+    # path(route, view, ...)
+    path('polls/', include('polls.urls')),
+    # polls.urls 모듈을 바라보게 설정(urls.py) 즉, mysite.urls.py <- polls.urls.py <- view.index(method)
     path('admin/', admin.site.urls),
 ]

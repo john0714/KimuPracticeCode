@@ -55,7 +55,7 @@ th, td {
   width: 12%;
   height: 40px;
   border-bottom: 1px solid var(--text-color);
-  padding: 10px;
+  padding: 6px;
 }
 
 button {
@@ -66,7 +66,7 @@ button {
 }
 
 select {
-  font-size: 20px;
+  font-size: 18px;   /* 180604 20px -> 18px 修正*/
   width: 200px;
   text-align-last: center;
 }
@@ -103,28 +103,22 @@ header .container-small {
 
   table {
     color: black;
-  	max-width: 1000px;
-  	margin-left: auto;
-  	margin-right: auto;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     border-collapse: collapse;
   }
-}
 
-.timeSheet-all {
-  margin-top: 4%;
-  padding-left: 15%;
-  padding-right: 15%;
-  min-width: 768px;
+  .timeSheet-all {
+    margin-top: 4%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 }
 
 .timeSheet-form {
   margin-top: 20px;
-}
-
-.search-btn
-{
-  cursor: pointer;
 }
 
 .headA ul {
@@ -159,6 +153,7 @@ header .container-small {
 
 .headB {
   color: white;
+  margin-left: 5px;
   margin-right: 10px;
   padding: 10px;
   border: none;
@@ -189,16 +184,20 @@ header .container-small {
 }
 
 .search-btn {
+  cursor: pointer;
   background-color: var(--text-color);
   height: 34px;
   width: 82px;
+  border: 0px; /* 180611 修正 */
 }
 
 .download-btn, .modify-btn{
+  margin-left: 2px;
   color: white;
   background-color: var(--light-btn-color);
   height: 34px;
   width: 82px;
+  border: 0px; /* 180611 修正 */
 }
 
 .note-btn {
@@ -207,13 +206,108 @@ header .container-small {
   height: 40px;
   width: 95px;
   text-align: center;
+  border: 0px; /* 180611 修正 */
 }
 
 .small-cell {
   width: 6%;
 }
 
-/* 以下、モバイル環境CSS
+/* 180612追加 モバイル画面 */
 @media (max-width: 767px) {
+  table {
+    color: black;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-collapse: collapse;
+  }
 
-} */
+  /* ヘッダー */
+  header {
+    position: inherit;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0.8;
+  }
+
+  header .container-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+  }
+
+  .headA ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* メニュー Font */
+  .headA a {
+    display: block;
+    padding: 20px;
+    color: inherit;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .headA a:hover {
+    background-color: rgba(255, 250, 250, 0.4);
+  }
+
+  .headA {
+    background: black;
+    color: white;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    height: 1000px;
+    text-align: center;
+    display: none;
+  }
+
+  /* メニューハンバーガーメボタン */
+  .headB {
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .headB:hover {
+    opacity: 0.3;
+  }
+  /* ヘッダー終了 */
+
+  .timeSheet-all {
+    margin-top: 4%;
+  }
+
+  .buttons-container {
+    display: flex; /* 横に並ぶ */
+    justify-content: space-between; /* 右左整列 */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeSheet-top {
+    text-align: center;
+  }
+
+  .select-form {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+}

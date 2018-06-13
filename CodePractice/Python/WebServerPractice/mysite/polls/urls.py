@@ -19,6 +19,18 @@ from django.urls import path
 
 from . import views
 
+# 만약 app이 polls하나 말고 여러개가 있을경우, view에서(template를 통해)이 app을 어떻게 찾을까? 답은, app_name을 추가하여 template에서 이 공간을 지정하도록 만드는거다.
+app_name = 'polls'
+
+# views.py안의 내용을 추가(path()호출 추가)
 urlpatterns = [
-    path('', views.index, name='index'),
+    # ex: /polls/
+    path('', views.index, name='index'), #view클래스의 index메소드를 index로 설정
+    # ex: /polls/[question_id]/
+    path('<int:question_id>/', views.detail, name='detail'),
+    # ex: /polls/[question_id]/results/
+    path('<int:question_id>/results/', views.results, name='results'),
+    # ex: /polls/[question_id]/vote/
+    path('<int:question_id>/vote/', views.vote, name='vote'),
+    #path('polls/latest.html', views.index), 이런식으로 view를 불러오는 코드 만들수도 있지만. 바보같아 보이지 이렇게 코드 짜진 말자
 ]

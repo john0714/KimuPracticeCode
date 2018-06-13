@@ -10,10 +10,12 @@
       <select name="YearMonth" id="YearMonth">
         <?php //print Year and Month
         foreach($YMs as $key=>$value) {
+          $yearkey = substr($key, 0, 4); // 180605年月修正
+          $monthkey = substr($key, 4, 2);
           if($key == $selectYM) { ?>
-            <option selected><?=$key?></option>
+            <option selected><?=$yearkey."年".$monthkey."月"?></option>
           <?php } else { ?>
-            <option><?=$key?></option>
+            <option><?=$yearkey."年".$monthkey."月"?></option>
           <?php }
         } ?>
       </select>

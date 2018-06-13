@@ -31,6 +31,8 @@
   </script>
 
   <meta charset="utf-8">
+  <!-- 180612 device automatic resize width -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
   <link rel="stylesheet" href="timeSheet_style.css">
   <link rel="shortcut icon" href=""> <!-- remove favico.ico error -->
 
@@ -93,7 +95,7 @@
         <button type="button" name="search" id="search" class="search-btn">検索</button>
     </div>
     <div class="button-form" id="BF">
-      <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/>
+      <!-- <input type=button name="modify" id="modify" onclick='DBmodify()' class="modify-btn" value=""/> -->
       <input type=submit name="ExcelExport" class="download-btn" value="DL"></input>
     </div>
   </div>
@@ -110,20 +112,21 @@
         <th>休憩</th>
         <th>残業</th>
       </tr>
-      <tr>
-        <td>ロ</td>
-        <td>ー</td>
-        <td>ディ</td>
-        <td>ン</td>
-        <td>グ</td>
-        <td>中</td>
-        <td>…</td>
-      </tr>
+      <!-- <tr>
+        <td></td>
+        <td></td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td>ローディング...</td>
+        <td></td>
+      </tr> -->
       <input type=hidden name="workdata" value=<?=json_encode($workarray) ?>></input>
       <input type=hidden name="YM" value=<?=$year.$month ?>></input>
       <tr class="memo-cell">
         <th colspan="2">備考</th>
-        <td colspan="4"><textarea name="note" id="note" rows="8" cols="80"></textarea></td>
+        <!-- 180612 textArea width auto -->
+        <td colspan="4"><textarea style="width:100%;" name="note" id="note" rows="8" cols="80"></textarea></td>
         <td><input type=button value="備考セーブ" onclick='SaveNote()' class="note-btn"></input></td>
       </tr>
     </table>
@@ -138,6 +141,7 @@
   var UsersRef = "";
   var SelectYM = "";
   var Notevalue = "";
+  var date = "";
 
   // Firebase Lodaing....
   $(window).load(function() {
@@ -163,7 +167,6 @@
       Attendances_monthlyRef = database.ref('Attendances_monthly/' + userInfo );
       UsersRef = database.ref('Users/' + userInfo );
       SelectYM = <?=$year.$month?>; //SelectYM Save
-      Notevalue = "";
 
       /* Firebase on, once Diffrence Practice */
       Attendances_monthlyRef.on('value', function(data){  //onで毎回呼び出す monthly時代のデータ
@@ -172,12 +175,17 @@
 
       /* Pageloading start */
       Attendances_monthlyRef.once('value', function(data){
-        Attendances_monthly = data.val();
-        Notevalue = Attendances_monthly[<?=$year.$month?>]["attendances_memo"]; //Notevalue save
+        //180611 attendances_memo null Exception(最新のデータがない場合の例外)
+        if(Attendances_monthly[<?=$year.$month?>] != null) {
+          date = <?=$year.$month?>
+        } else {
+          date = <?=$year.$month-1?>;
+        }
+        Notevalue = Attendances_monthly[date]["attendances_memo"]; //Notevalue save
         $.ajax({
             type: "POST", //データ送信形式
             url: "TimeSheetSelect.php", //請求される場所 -> つまり、データを取る場所です
-            data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+            data : {"YearMonth": date, //洗濯した年月 -> JSON形式
                     "Attendances_monthly": Attendances_monthly
                    }, //urlに送る Parameter
             success: function(datas){
@@ -217,11 +225,11 @@
           Attendances_daily = data.val();
       })
 
-      Attendances_dailyRef.once('value', function(data){
+      Attendances_dailyRef.once('value', function(data){//180611 attendances_memo null Exception
         $.ajax({
           type: "POST", //データ送信形式
           url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です(テーブルの中身が必要)
-          data : {"YearMonth": <?=$year.$month?>, //洗濯した年月 -> JSON形式
+          data : {"YearMonth": date, //洗濯した年月 -> JSON形式
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
                  }, //urlに送る Parameter
@@ -244,11 +252,13 @@
         document.getElementById("modify").value = "修正";
       }
       SelectYM = document.getElementById("YearMonth").value; //SelectYM Save
+      SelectYM = SelectYM.replace(/年/gi, "");
+      SelectYM = SelectYM.replace(/月/gi, ""); //SelectYM Save, 180605年月修正に従ってコード修正
       Notevalue = Attendances_monthly[SelectYM]["attendances_memo"]; //Notevalue save
       $.ajax({
           type: "POST", //データ送信形式
           url: "TimeSheetSearchTable.php", //請求される場所 -> つまり、データを取る場所です
-          data : {"YearMonth": $("#YearMonth").val(), //洗濯した年月 -> JSON形式
+          data : {"YearMonth": SelectYM, //洗濯した年月 -> JSON形式
                   "Attendances_daily": Attendances_daily,
                   "Notevalue": Notevalue
                  }, //urlに送る Parameter
