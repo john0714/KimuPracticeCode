@@ -5,15 +5,25 @@ from django.utils import timezone # Django의 시간대 관련 유틸리티인 d
 # 각 모델은 django.db.models.Model이라는 클래스의 서브클래스로 표현됨
 # Database의 각 필드는 Field클래스의 인스턴스로서 표현됨. CharFiled는 문자필드, DateTimeField는 날짜와 시간필드를 표현
 # 이것은 각 필드가 어떤 자료형을 가질수 있는지를 Django에게 말함
+
 class Question(models.Model):  #객체
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published')  # 미래로 pub_date를 설정하는 것은 그 시기가 되면 질문이 게시되지만 그때까지는 보이지 않는 것을 의미해야함
 
     def __str__(self):
         return self.question_text
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+        # 날자가 과거에 있을때만 True 반환
+    #admin 화면 내용 수정
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Published recently?'
 
 class Choice(models.Model):  # 객체
     question = models.ForeignKey(Question, on_delete=models.CASCADE)

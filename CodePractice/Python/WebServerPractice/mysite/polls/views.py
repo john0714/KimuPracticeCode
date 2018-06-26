@@ -2,8 +2,39 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect  # http패�
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.urls import reverse  # Django2.0이 되면서 django.core.urlresolvers가 django.urls로 옮겨짐
+from django.views import generic
+from django.utils import timezone
 from .models import Choice, Question
 
+# 기본 Django 방식(ListView, DetailView의 2가지 Generic View를 사용하고 있음)
+# 각 Generic View는 어떤 모델이 적용될 것인지 알아야함
+class IndexView(generic.ListView): # generic.ListView : 개체 목록 표시 추상화
+    template_name = 'polls/index.html'
+    # ListView의 경의 자동 생성 된 Context변수는 question_list임. 이것을 덮어쓰기 위해 context_object_name속성을 제공하고 latest_question_list를 사용하도록 지정함
+    context_object_name = 'latest_question_list'
+
+    # 전에는 아직 게시되지않은 설문조사(미래에 pub_date가 있는 설문조사)가 표시되므로, 이걸 수정해야함
+    def get_queryset(self):
+        #return Question.objects.order_by('-pub_date')[:5]
+        return Question.objects.filter(pub_date__lte = timezone.now()).order_by('-pub_date')[:5]
+
+# DetailView Generic View는 URL에서 캡쳐 된 기본 값이 pk라고 기대하기 때문에 question_id를 Generic View를 Generic View를 위해 pk로 변경함
+# 기본적으로 DetailView Generic View는 <app name>/<model name>_detail.html 템플릿을 사용함. 이번 예시에선 polls/question_detail.html템플릿을 사용함
+class DetailView(generic.DetailView):  # generic.DetailView : 세부 정보 페이지 표시 개념 추상화
+    # question 변수가 자동으로 제공되서 OK
+    model = Question
+    template_name = 'polls/detail.html'
+
+    # 미래의 설문들은 목록에 나타나지 않지만, 사용자가 URL을 알고있거나, 추축하면 접근 할 수 있기에 DetailView에 비슷한 제약 조건을 추가 할 필요가 있음
+    def get_queryset(self):
+        return Question.objects.filter(pub_date__lte=timezone.now())
+
+class ResultsView(generic.DetailView):  # generic.DetailView : 세부 정보 페이지 표시 개념 추상화
+    model = Question
+    template_name = 'polls/results.html'
+
+# 이 아래는 기본 웹 방식(Django Framework를 쓰니까. Django방식에 맞춰서 코드 쓰도록 하자)
+"""
 # view화면
 def index(request):
     #시스템에 저장된 최소한 5개의 투표 질문이 콤마로 분리되어 발행일에 따라 출력됨
@@ -18,13 +49,6 @@ def index(request):
     return render(request, 'polls/index.html', context) # HttpResponse로 template에 context를 채워서 돌려주는건 자주 쓰기때문에 render라는
 
 def detail(request, question_id):
-    """
-    try:
-        question = Question.objects.get(pk=question_id)  # Question model에서 변수 가져옴
-    except Question.DoesNotExit: # Python에선 try-catch가 아닌 try-except로 쓰는듯
-        raise Http404("Question does not exist")  # 요청된 질문의 ID가 없을 경우 Http404 Exception을 발생시킴
-    return render(request, 'polls/detail.html', {'question': question})
-    """
     # shartcut. 객체가 존재하지 않을때 get()을 사용하여 Http404예외를 발생시키는건 자주 쓰이는 용법임.
     # 자주 쓰이므로, Django에선 이 기능에 대해 단축기능을 제공함
     question = get_object_or_404(Question, pk=question_id)  # Django모델을 첫번째 인자로 받고, 몇개의 인수를 모델 관리자의 get함수에 넘김(만약 객체가 존재하지 않을 경우, Http404예외가 발생함)
@@ -33,8 +57,10 @@ def detail(request, question_id):
 
 def results(request, question_id):
     q = get_object_or_404(Question, pk = question_id)
-    return render(request, 'polls/result.html', {'question': q})
+    return render(request, 'polls/results.html', {'question': q})
     # detail()뷰와 거의 동일
+"""
+
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk = question_id)

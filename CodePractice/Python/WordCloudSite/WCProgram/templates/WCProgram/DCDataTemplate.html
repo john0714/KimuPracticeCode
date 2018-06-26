@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!--
+    180614
+    Word Cloud Export System Prototype
+    by jhkim
+-->
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8"> <!-- モバイル画面にも合わせて設定 -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>  <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="{% static 'WCProgram/style.css' %}" />
+    <title>GetWordCloud!</title>
+</head>
+<body>
+    <div id="loading">
+        <img id="loading-image" src="{% static 'WCProgram/images/Loading.gif' %}" alt="Loading..." />
+        <h1>작업중입니다...</h1>
+        <p>다운로드 후 다시 출력을 하고싶으면 페이지를 새로고침 해주세요</p>
+    </div>
+
+    <h1>갤러리와 페이지를 선택하세요</h1>
+    <!-- if you want new tap page, Do like this : <form target="_blank" ...>-->
+    <form id="submitform" action="{% url 'WCProgram:GDWC' %}" method="post">   {# url [APPNAME]:[URLNAME], urls.pyでAPP名前の設定が必要 #}
+        {% csrf_token %} <!-- Cross Site Request Forgery(CSRF)防止-->
+        <div class="simple">
+            <input type="hidden" id="address" name="address" value="http://gall.dcinside.com/"></input>
+
+            <!--============================ Gallery List ============================-->
+            <select class="gallery" name="gallery">
+                <option value="board/lists/?id=tree">식물 갤러리</option>
+                <option value="board/lists/?id=idolmaster">아이돌마스터 갤러리</option>
+                <option value="board/lists/?id=leagueoflegends2">리그 오브 레전드 갤러리</option>
+                <option value="mgallery/board/lists/?id=aoegame">중세게임 마이너 갤러리</option>
+                <option value="board/lists/?id=baseball_new7">국내야구 갤러리</option>
+                <option value="board/lists/?id=comic_new1">만화 갤러리</option>
+            </select>
+
+            <!--============================ Start Page ============================-->
+            <select class="spage" name="spage">
+                {# 정말 불행히도, Django Template언어에선 range를 제공하지 않음.
+                   그래서 아래와 같은 편법을 쓰거나, response(혹은 render)로 Python에서 만든 range 값을 가져와서 써야함 #}
+                {% for i in "x"|rjust:"1000" %}
+                <option value={{ forloop.counter }}>{{ forloop.counter }} ~</option>
+                {% endfor %}
+            </select>
+
+            <!--============================ End Page ============================-->
+            <select class="epage" name="epage">
+                {% for i in "x"|rjust:"1000" %}
+                <option value={{ forloop.counter }}>{{ forloop.counter }}</option>
+                {% endfor %}
+            </select>
+
+            <!--============================ Subject ============================-->
+            <select class="WorN" name="WorN">
+                <option value="W">글 데이터</option>
+                <option value="N">닉네임 데이터</option>
+            </select>
+            <input type="submit" id="Dobutton" value="출력"></input>
+        </div>
+    </form>
+</body>
+
+<script>
+    // 일단 새로고침 하라고 창 띄우는 간편한 방식으로 진행
+    // 다중 submit제한.
+    $("#loading").hide();
+    $('#submitform').submit(function(e) {
+       $("#loading").show();
+    });
+</script>
+
+</html>

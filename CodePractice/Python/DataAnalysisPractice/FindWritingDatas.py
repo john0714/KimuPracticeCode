@@ -33,6 +33,7 @@ class FD(object):
             response = rq.get(URL + str(Pagecount), headers={'User-Agent': user_agent})
             soup = BeautifulSoup(response.text, 'html.parser')  # 전체 HTML에서 특정 부분만 찾기 위한 html parsing
             NickNameArticle = soup.findAll('a', {'class': 'icon_pic_n'})  # 닉네임 전부 가져옴
+
             for index in NickNameArticle:
                 overloadText = overloadText + index.text
 

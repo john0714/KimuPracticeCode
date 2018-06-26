@@ -14,32 +14,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/views.py">
+      <file leaf-file-name="DCdata.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/DCdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+            <state relative-caret-position="121">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding>
-                <element signature="e#0#84#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -50,76 +32,51 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>body</find>
-      <find>形容詞</find>
-      <find>random</find>
-      <find>kolaw</find>
+      <find>reverse</find>
+      <find>{% csrf_token %}</find>
+      <find>continue</find>
+      <find>choice</find>
+      <find>FindWritingDatas</find>
+      <find>Nickname</find>
+      <find>Image</find>
+      <find>konply</find>
+      <find>jpype</find>
+      <find>url</find>
+      <find>pdb.set_trace()</find>
+      <find>ALLOWED_HOSTS</find>
+      <find>font</find>
+      <find>tkinter</find>
+      <find>content</find>
+      <find>redirect</find>
+      <find>static</find>
+      <find>tkin</find>
       <find>STOPWORDS</find>
-      <find>t</find>
-      <find>社</find>
-      <find>運営</find>
-      <find>杏</find>
-      <find>finddata</find>
-      <find>if</find>
-      <find>mecab_analysis</find>
-      <find>grey_color_func</find>
-      <find>rq</find>
-      <find>nltk</find>
-      <find>en</find>
-      <find>en-us</find>
-      <find>tVal</find>
-      <find>penLength</find>
-      <find>gndCenterX</find>
-      <find>finddatas</find>
-      <find>find</find>
-      <find>findnick</find>
-      <find>default</find>
-      <find>Time</find>
-      <find>Installed</find>
-      <find>templates</find>
-      <find>latest_question_list</find>
-      <find>request.post</find>
-      <find>+=</find>
+      <find>r</find>
+      <find>Content-Disposition</find>
+      <find>attachment</find>
+      <find>WSGI</find>
+      <find>np.</find>
+      <find>for</find>
+      <find>list</find>
+      <find>stop_words</find>
+      <find>set</find>
+      <find>GetDCdata</find>
+      <find>max_font_size</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ClassMethod.py" />
-        <option value="$PROJECT_DIR$/venv/ClassVarious.py" />
-        <option value="$PROJECT_DIR$/ClassVarious.py" />
-        <option value="$PROJECT_DIR$/ClassVariousCal.py" />
-        <option value="$PROJECT_DIR$/Override.py" />
-        <option value="$PROJECT_DIR$/Override-1.py" />
-        <option value="$PROJECT_DIR$/Override-2.py" />
-        <option value="$PROJECT_DIR$/OverrideCal.py" />
-        <option value="$PROJECT_DIR$/lib.py" />
-        <option value="$PROJECT_DIR$/Module.py" />
-        <option value="$PROJECT_DIR$/ClassUse.py" />
-        <option value="$PROJECT_DIR$/modulepractice.py" />
-        <option value="$PROJECT_DIR$/Multi_inheritance.py" />
-        <option value="$PROJECT_DIR$/MultiplyCal.py" />
-        <option value="$PROJECT_DIR$/PackageManager.py" />
-        <option value="$PROJECT_DIR$/Pandas/1.py" />
-        <option value="$PROJECT_DIR$/Pandas/Obejct_Creation.py" />
-        <option value="$PROJECT_DIR$/Pandas/DataAnalysisPractice.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice.py" />
-        <option value="$PROJECT_DIR$/WritingCountProgram.py" />
-        <option value="$PROJECT_DIR$/basic/ClassUse.py" />
-        <option value="$PROJECT_DIR$/Pandas/Running_10minute.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/WritingCountProgram.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/WorkCloud.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloud.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/FindDatas.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/Graphmatplotlib.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/FindNickNameDatas.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py" />
         <option value="$PROJECT_DIR$/WebServerPractice.py" />
         <option value="$PROJECT_DIR$/WebServerPractice/FirstWebServer.py" />
         <option value="$PROJECT_DIR$/WebServerPractice/firstServer/manage.py" />
@@ -130,32 +87,57 @@
         <option value="$PROJECT_DIR$/RougeKutta+Pendulum.py" />
         <option value="$PROJECT_DIR$/Pandas/PandasBasic.py" />
         <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py" />
-        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py" />
         <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/urls.py" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/settings.py" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/models.py" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/admin.py" />
         <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/index.html" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/urls.py" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/index.html" />
         <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/result.html" />
-        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/detail.html" />
         <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/views.py" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/tests.py" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/index.html" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/static/polls/style.css" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/models.py" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin/base_site.html" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin/templates/admin/base_site.html" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin/base_site.html" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/urls.py" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/admin.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/static/style.css" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/apps.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/index.html" />
+        <option value="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/detail.html" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py" />
+        <option value="$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WordCloudSite/urls.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WordCloudSite/settings.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WordCloudSite/wsgi.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/DC.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/DCs.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/DCWrite.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/DCNickName.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/views.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/index.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/urls.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/Result.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/DCdata.py" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/DCDataTemplate.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/kr.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/jp.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/en.html" />
+        <option value="$PROJECT_DIR$/WordCloudSite/WCProgram/static/WCProgram/style.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="591" />
+    <option name="x" value="365" />
     <option name="y" value="23" />
-    <option name="width" value="849" />
-    <option name="height" value="790" />
+    <option name="width" value="1071" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,61 +148,68 @@
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
+              <item name="DataAnalysisPractice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServerPractice" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
+              <item name="WCProgram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
+              <item name="WordCloudSite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/series.py" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -234,15 +223,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls" />
-      <recent name="$PROJECT_DIR$/WebServerPractice/mysite/polls" />
-      <recent name="$PROJECT_DIR$/DataAnalysisPractice" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/static/WCProgram/images" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/static/WCProgram" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/templates" />
+      <recent name="$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/static/WCProgram/images" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/static" />
+      <recent name="$PROJECT_DIR$/WordCloudSite/WCProgram/templates" />
+      <recent name="$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -379,18 +372,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="591" y="23" width="849" height="790" extended-state="0" />
+    <frame x="365" y="23" width="1071" height="810" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.28739694" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49790794" visible="true" weight="0.23902895" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030146" side_tool="true" weight="0.27738264" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49698535" weight="0.27738264" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030146" side_tool="true" weight="0.27445653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49698535" weight="0.27653632" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.50209206" side_tool="true" weight="0.31780168" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32880434" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3980978" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32012194" />
       <window_info id="Favorites" order="2" sideWeight="0.5009709" side_tool="true" weight="0.28538284" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -398,8 +391,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3282123" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -412,156 +408,10 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ClassCal.py" />
-    <entry file="file://$PROJECT_DIR$/lib.py" />
-    <entry file="file://$PROJECT_DIR$/modulepractice.py" />
-    <entry file="file://$PROJECT_DIR$/Module.py" />
-    <entry file="file://$PROJECT_DIR$/ClassUse.py" />
-    <entry file="file://$PROJECT_DIR$/Multi_inheritance.py" />
-    <entry file="file://$PROJECT_DIR$/MultiplyCal.py" />
-    <entry file="file://$PROJECT_DIR$/PackageManager.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/indexes/datetimes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="2015" column="4" selection-start-line="2015" selection-start-column="4" selection-end-line="2015" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="2691" column="8" selection-start-line="2691" selection-start-column="8" selection-end-line="2691" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pandas/foo.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/contact.py" />
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/CqStackCode.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WritingCountProgram.py" />
-    <entry file="file://$PROJECT_DIR$/basic/ClassUse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/konlpy/tag/_hannanum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/firstServer/blog/admin.py" />
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/firstServer/blog/models.py" />
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/firstServer/ServerSetting/settings.py" />
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/firstServer/manage.py" />
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/matplotlibPractice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/matplotlibGetnickname.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pandas/PandasBasic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="182" column="21" selection-start-line="182" selection-start-column="21" selection-end-line="182" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pandas/Running_10minute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="229" column="22" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RougeKutta+Pendulum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindNickNameDatas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-738">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-1199943127/sys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="68" lean-forward="true" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/admin/sites.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -590,100 +440,285 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/templates/admin/auth/user/add_form.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin/admin/auth/user/add_form.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin/base_site.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/template/admin/admin/base_site.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin/auth/user/add_form.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin/admin/auth/user/add_form.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin/templates/admin/auth/user/add_form.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/templates/admin/base_site.html" />
     <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/apps.py">
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="11" selection-start-line="20" selection-end-line="20" selection-end-column="11" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="55" column="9" selection-start-line="55" selection-end-line="55" selection-end-column="9" />
+        <state relative-caret-position="218">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/static/polls/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="61" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/pdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="973" column="34" selection-start-line="973" selection-start-column="26" selection-end-line="973" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/urls/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state relative-caret-position="135">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudCharacter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudBasic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="63" column="45" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="300" column="22" selection-start-line="300" selection-start-column="22" selection-end-line="300" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WordCloudSite/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/-1199943127/_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="894" column="8" selection-start-line="894" selection-start-column="8" selection-end-line="894" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/DCNickName.html" />
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindNickNameDatas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/FindWritingDatas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysisPractice/WordCloudGallery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/konlpy/tag/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WordCloudSite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/Result.html" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/wordcloud/wordcloud.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="270" column="30" selection-start-line="270" selection-start-column="17" selection-end-line="270" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WordCloudSite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#654#686#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state relative-caret-position="412">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#656#684#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/models.py">
+    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/mysite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/http/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/templates/polls/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/http/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="422" column="24" lean-forward="true" selection-start-line="422" selection-start-column="24" selection-end-line="422" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServerPractice/mysite/polls/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+        <state relative-caret-position="648">
+          <caret line="72" column="10" lean-forward="true" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
-            <element signature="e#0#84#0" expanded="true" />
+            <element signature="e#15#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/kr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/en.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="87" lean-forward="true" selection-start-line="14" selection-start-column="87" selection-end-line="14" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/jp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/static/WCProgram/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/templates/WCProgram/DCDataTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordCloudSite/WCProgram/DCdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!--
+    180614
+    Word Cloud Export System Prototype
+    by jhkim
+-->
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8"> <!-- モバイル画面にも合わせて設定 -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>  <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="{% static 'WCProgram/style.css' %}" />
+    <title>GetWordCloud!</title>
+</head>
+<body>
+    <div id="loading">
+      <img id="loading-image" src="{% static 'WCProgram/images/Loading.gif' %}" alt="Loading..." />
+      <p>作業中です・・・</p>
+      <p>再びやりたいならリフレッシュしてください。</p>
+    </div>
+
+    <h1>あなただけのワードクラウドを貰いましょう!</h1>
+    <!-- if you want new tap page, Do like this : <form target="_blank" ...>-->
+    <form id="submitform" action="{% url 'WCProgram:GWC' %}" method="post">   {# url [APPNAME]:[URLNAME], urls.pyでAPP名前の設定が必要 #}
+        {% csrf_token %} <!-- Cross Site Request Forgery(CSRF)防止-->
+        <div class="simple">
+            <input type="text" id="address" name="address" placeholder="ここにサイトの住所を入れてください!!"></input>
+            <input type="submit" id="Dobutton" value="出力"></input>
+            <input type="hidden" name="lang" value="jp"></input>
+        </div>
+    </form>
+</body>
+
+<script>
+    $("#loading").hide();
+     $('#submitform').submit(function(e) {
+        $("#loading").show();
+     });
+</script>
+
+</html>

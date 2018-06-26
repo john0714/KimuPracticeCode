@@ -68,7 +68,7 @@ FD = FindWritingDatas.FD(GName, StartPage, EndPage)
 overloadText = FD.GetData()
 
 tokens_ko = t.nouns(overloadText)  # konlpy Package의 t를 이용하여 단어 나눔
-stop_words = ['거','왜','좀','레','뭐','임','코','페','타','함']  # 제외 단어
+stop_words = ['거','왜','좀','레','뭐','임','코','페','타','함','요','이']  # 제외 단어
 tokens_ko = [each_word for each_word in tokens_ko if each_word not in stop_words]  # for, if, not in 이용해서 제외단어 이외의 단어만 남김
 ko = nltk.Text(tokens_ko, name='@갤DB')
 data = ko.vocab().most_common(500)  # 정렬된 list-tuple형식으로 변경(Count해줌. 최대 500)

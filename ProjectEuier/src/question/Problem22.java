@@ -14,13 +14,13 @@ public class Problem22 {
 			Collections.sort(words); // 1. 정렬(알파벳 순)
 			long result = 0;
 			
-			for(int i = 0; i < words.size(); i++) { // 0~5162 단어 순서대로 부름
+			for(int i = 0; i < words.size(); i++) { // 2. 0~5162 단어 순서대로 부름
 				int alpa = 0;
 				String word = (String)words.get(i);
 				for(int l = 0; l < word.length(); l++) { // 단어의 알파벳 하나
 					alpa += (int)word.substring(l, l+1).charAt(0)-64; // 숫자로 치환해서 더함
 				}
-				result += alpa * (i+1); //모두 더하기
+				result += alpa * (i+1); // 3. 모두 더하기
 			}
 			
 			System.out.println(result);

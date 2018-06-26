@@ -12,6 +12,8 @@
     {% endfor %} <!-- for문 종료를 endfor로 선언함 -->
     <input type="submit" value="Vote" />
 </form>
+
+
 <p>위 템플릿은 각 질문 선택 항목에 대한 라디오버튼을 표시함. value는 연관된 질문 선택 항목의 ID, name은 "choice" 즉, 누군가 라디오버튼중 하나를 선택하여 폼을 제출하면, POST데이터인 choice=#을 보낸다는것(여기서 #은 선택한 항목의 ID)</p>
 <p>action을 {% url 'polls:vote' question.id %}로 설정하고 method="post로 설정함. 이 폼을 전송하는 행위는 서버측 자료를 변경할 것이므로, method="post"(method="get"과는 반대로)를 사용하는게 매우 중요함(웹 개발시 권장사항)</p>
 <p>forloop.counter는 for태그가 반복한 횟수를 나타냄</p>
