@@ -30,15 +30,37 @@
             <input type="text" id="address" name="address" placeholder="ここにサイトの住所を入れてください!!"></input>
             <input type="submit" id="Dobutton" value="出力"></input>
             <input type="hidden" name="lang" value="jp"></input>
+            <input type="hidden" name="image" value="{{ uploaded_file_url }}"></input> <!-- 이미지 파일 -->
         </div>
     </form>
+
+    <!-- Upload Test, upload하기 위해서는 form에 enctype="multipart/form-data"설정이 필요함, novalidate는 form제출시 유효성 검사를 하지 않게 해줌. -->
+    <form id="uploadform" method="post" action="{% url 'WCProgram:upload' %}" enctype="multipart/form-data" novalidate>
+        {% csrf_token %} <!-- Cross Site Request Forgery(CSRF)防止(Form안에 꼭 필요)-->
+        <div class="upload">
+            <input type="file" name="myfile">
+            <input type="submit" value="Upload"></input>
+            <input type="hidden" name="lang" value="jp"></input>
+        </div>
+    </form>
+
+    <div class="Selected">
+        {% if uploaded_file_url == null %} <!-- null check -->
+        <h2>選択された画像がありません</h2>
+        {% else %}
+        <!-- Upload된 파일은 file의 url을 href로 지정하고 download를 넣어주면 다운 가능 -->
+        <h2>画像を選択しました。この画像で出力されます。</h2>
+        <img src="{{ uploaded_file_url }}" width="640px" height="480px" alt="SelectImage" />
+        {% endif %}
+    </div>
 </body>
 
 <script>
     $("#loading").hide();
-     $('#submitform').submit(function(e) {
-        $("#loading").show();
-     });
+
+    $('#submitform').submit(function(e) {
+       $("#loading").show();
+    });
 </script>
 
 </html>

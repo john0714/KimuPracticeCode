@@ -6,6 +6,7 @@ from django.urls import reverse
 from konlpy.tag import Twitter; t = Twitter()
 from wordcloud import WordCloud
 from wordcloud import STOPWORDS
+from wordcloud import ImageColorGenerator
 from PIL import Image
 import jpype
 
@@ -29,6 +30,10 @@ import io
 
 # Japanese
 import MeCab
+
+# File Upload
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage  # model안쓰고 가볍게 업로드 할 때 사용
 
 def index(request):
     context = {
@@ -72,12 +77,19 @@ def mecab_analysis(text):
 
 def GetWordCloud(request):  # post처리가 일어나는곳. -> Redirct처리(CSRF보안에러 일어날수도 있음), matplotlib's Tkinter always use main thread
     check = request.POST['lang']
+    image = request.POST['image']
     URL = request.POST['address']
     user_agent = 'forget'
     overloadText = ""
     response = rq.get(URL, headers={'User-Agent': user_agent})
     soup = BeautifulSoup(response.text, 'html.parser')  # 전체 HTML에서 특정 부분만 찾기 위한 html parsing
-    mask = np.array(Image.open("WCProgram/static/WCProgram/images/oval.jpg"))  # default mask
+
+    if image != "":
+        mask = np.array(Image.open(image))  # select mask
+        image_colors = ImageColorGenerator(mask)
+    else:
+        mask = np.array(Image.open("WCProgram/static/WCProgram/images/oval.jpg"))  # default mask
+
     alldata = soup.find_all()
     taglist = set()
 
@@ -160,7 +172,12 @@ def GetWordCloud(request):  # post처리가 일어나는곳. -> Redirct처리(CS
 
     # killed error：ラムが足りないときによく発動
     plt.figure(figsize=(16, 16))
-    plt.imshow(wc, interpolation="bilinear")
+
+    if image != "":
+        plt.imshow(wc.recolor(color_func=image_colors), interpolation='bilinear')
+    else:
+        plt.imshow(wc, interpolation="bilinear")
+
     plt.axis("off")
     #plt.savefig('GalleryDataWC.png')  # word cloud 세이브
 
@@ -181,3 +198,16 @@ def GetWordCloud(request):  # post처리가 일어나는곳. -> Redirct처리(CS
     gc.collect()  # garbage collect empty(for server memory)
 
     return response
+
+def upload_file(request):
+    lang = request.POST['lang']
+    if request.method == "POST" and request.FILES.get('myfile', False): # POST값을 받음, 선택된게 아무것도 없을경우 아무것도 없음을 반환
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        upload_file_url = fs.url(filename)[1:] #substring
+        return render(request, 'WCProgram/'+lang+'.html', {'uploaded_file_url':upload_file_url})
+        #return HttpResponseRedirect(reverse('WCProgram:en'))
+        # 모델까지 추가할시, Redirect로 파일에 돌아가서 모델을 통해 데이터를 불러와서 사용 하는듯(이미지 URL이라던가)
+        # 새로고침시 재처리를 방지하려면 위 방식(Redirect)을 써야함.
+    return render(request, 'WCProgram/'+lang+'.html')

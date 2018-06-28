@@ -122,3 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Uploadfile
+# media files : 유저가 업로드 한 모든 정적인 파일(image, pdf etc), 프로젝트 단위로 저장/서빙함
+# The MEDIA_URL setting must end with a slash
+# MEDIA_URL = '/media/'  # 요청
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')  # 저장 위치(settings.MEDIA_ROOT 디렉토리 하단에 파일 저장)
+MEDIA_URL = '/media/'  # 요청
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')  # 저장 위치
